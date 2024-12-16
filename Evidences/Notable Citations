@@ -11,6 +11,9 @@ Previous research has shown promising results using con-volutional neural networ
 In reference [10], the authors addressed a five-category classification problem bydividing the preictal EEG signal into three consecutive segments. The categoriesincluded the interictal state, three preictal states (PreI, PreII, and PreIII), and one 
 ictal state. They proposed a CNN algorithm combined with SVM based on DSS (deepsupervised–supervised) and achieved an overall accuracy of 86.25% after 80 fixediterations 
 
+5. Epileptic seizures detection and the analysis of optimal seizure prediction horizon based on frequency and phase analysis
+discussion 部分
+
 
 从ResearchGate里获取Notable citations：
 https://www.researchgate.net/publication/336250746_Epileptic_Signal_Classification_with_Deep_EEG_Features_by_Stacked_CNNs/citations
