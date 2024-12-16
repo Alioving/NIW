@@ -42,3 +42,7 @@ Truong et al. [28] have proposed a convolutional neural network (CNN)-based gene
 11.Epileptic EEG Classification Using Synchrosqueezing Transform with Machine and Deep Learning Techniques
 The obtained results from the proposed ML-based methodand the DL-based method are promising compared with other recently published papers [15], [16].
 
+12.Transfer discriminative dictionary learning with label consistency for classification of EEG signals of epilepsy
+Electroencephalogram (EEG) signals from patients with epilepsy contain a large amount of physiological and pathological information in the brain, so the intelligent identification of EEG is very important for detection of epilepsy (Hu et al. 2019;Kevric et al. 2017;Sridhar et al. 2019). 
+
+
