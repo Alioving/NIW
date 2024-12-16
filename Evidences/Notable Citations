@@ -3,8 +3,7 @@
 https://www.researchgate.net/publication/336250746_Epileptic_Signal_Classification_with_Deep_EEG_Features_by_Stacked_CNNs/citations
 https://www.researchgate.net/publication/330832390_Mean_amplitude_spectrum_based_epileptic_state_classification_for_seizure_prediction_using_convolutional_neural_networks
 
-Reference: Mean amplitude spectrum based epileptic state classification for seizure prediction using convolutional neural networks
-
+一、Reference: Mean amplitude spectrum based epileptic state classification for seizure prediction using convolutional neural networks
 
 1.Hierarchy Graph Convolution Network and Tree Classification for Epileptic Detection on Electroencephalography Signals   Difei Zeng   Kejie Huang
 College of Information Science Electronic Engineering, Zhejiang University, Hangzhou, China
@@ -45,4 +44,34 @@ The obtained results from the proposed ML-based methodand the DL-based method ar
 12.Transfer discriminative dictionary learning with label consistency for classification of EEG signals of epilepsy
 Electroencephalogram (EEG) signals from patients with epilepsy contain a large amount of physiological and pathological information in the brain, so the intelligent identification of EEG is very important for detection of epilepsy (Hu et al. 2019;Kevric et al. 2017;Sridhar et al. 2019). 
 
+13.Deep Convolutional Neural Network-Based Epileptic Electroencephalogram (EEG) Signal Classification
+... In recent years, deep learning has started to gain popularity for medical image analysis and bioelectric signal processing. With a large amount of data, it outperforms traditional feature extraction and machine learning methods in pattern detection and image recognition in terms of classification accuracy (14)
 
+14.IoT and cloud computing based automatic epileptic seizure detection using HOS features based random forest classification
+For detecting epileptic seizures in multichannel EEG data samples, Cui et al. (2018) have presented bag-ofwaves based approach for learning EEG synchronization patterns using extreme learning machine (ELM) and have provided accurate prediction of seizures with sensitivity of 88.24%. A similar approach given in Hu et al. (2019) presents convolutional neural network (CNN) based feature extraction using mean amplitude spectrum of 19 subbands taken from 18 EEG channels and seizure classification using SVM. This technique provides classification results with accuracy of 86.25%. 
+
+
+二、Reference: Epileptic Signal Classification with Deep EEG Features by Stacked CNNs
+
+1. Multimodal EEG-fNIRS Seizure Pattern Decoding Using Vision Transformer
+Hence, by processing high-dimensional and combined EEG-fNIRS datasets, such DL algorithms have the potential to recognize intricate seizure patterns even when dealing with nonstationary or noisy data. For example, CNNs have proven to be effective for identifying and classifying EEG signals in [26].
+
+2.A review of epilepsy detection and prediction methods based on EEG signal processing and deep learning
+To overcome these limitations, researchers have increasingly integrated manual feature extraction with deep learning techniques (Cao et al., 2019;Yuan et al., 2018). This combined approach leverages the strengths of both methods, enhancing model performance and accuracy in epileptic seizure detection and prediction. 
+
+3.Epileptic Seizure Detection with Hybrid Time-Frequency EEG Input: A Deep Learning Approach
+The subband mean amplitude of spectrum map (MAS) obtained from different EEG rhythms was adopted for EEG representation in [21], and stacked CNNs were used for feature extraction and seizure detection. It proved that the MAS has the ability to characterize the different rhythms of EEG signals. ...
+
+4.An efficient epileptic seizure classification system using empirical wavelet transform and multi-fuse reduced deep convolutional neural network with digital implementation
+The discriminative features are extracted from the raw scalp EEG (sEEG) to predict the seizure epochs efficaciously by adopting CNN having sensitivity of 83.33% [48], prediction accuracy of 90.0% [49], and 99.33% using stacked CNN [50]. 
+
+5.Variable Weight Algorithm for Convolutional Neural Networks and its Applications to Classification of Seizure Phases and Types
+Stacked CNNs with adaptive and discriminative feature weighting fusion [7] were adopted to classify the same dataset and reached more than 84.0% accuracy for 5 classes
+
+6.Analysis Between ELM and ANN in EMG Signals Obtained for the Control of a Robotic Hand Prosthesis
+Artificial neural networks can collect information on samples, generalize, and then decide on those samples using learned information compared to samples they have never seen before. Due to these learnings and generalizations, artificial neural networks find wide applications in many scientific fields and demonstrate their ability to solve complex problems successfully [6]
+
+7.Brainwave Classification for Character-Writing Application using EMD-based GMM and KELM approaches （important）
+For this purpose, firstly, we explore empirical mode decomposition (EMD) to decompose the EEG signal into intrinsic mode functions (IMFs), which are used via six statistical features as the input features of the brainwave classification for the character-writing application. Secondly, by getting inspired by [16,17] that the shallow learning classifiers provide the promising performance for the classification of binary classes, Gaussian mixture model (GMM) and kernel extreme learning machine (KELM) are applied to distinguish between a circle and straight line characters. Finally, the score combination of GMM and KELM is proposed to fuse the advantages based on different classifiers
+
+8.
