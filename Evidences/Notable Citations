@@ -50,6 +50,11 @@ Electroencephalogram (EEG) signals from patients with epilepsy contain a large a
 14.IoT and cloud computing based automatic epileptic seizure detection using HOS features based random forest classification
 For detecting epileptic seizures in multichannel EEG data samples, Cui et al. (2018) have presented bag-ofwaves based approach for learning EEG synchronization patterns using extreme learning machine (ELM) and have provided accurate prediction of seizures with sensitivity of 88.24%. A similar approach given in Hu et al. (2019) presents convolutional neural network (CNN) based feature extraction using mean amplitude spectrum of 19 subbands taken from 18 EEG channels and seizure classification using SVM. This technique provides classification results with accuracy of 86.25%. 
 
+15.Epilepsy EEG Seizure Prediction Based on the Combination of Graph Convolutional Neural Network Combined with Long- and Short-Term Memory Cell Network
+In our model, our fragment sampling adopts the method of [12,17], that is, 50%overlapping sampling of the data is performed to obtain the sampled data xZ ∈ R2 f , wheref is the sampling frequency, and then this fragment is used for feature extraction. 
+
+(PDF) Epilepsy EEG Seizure Prediction Based on the Combination of Graph Convolutional Neural Network Combined with Long- and Short-Term Memory Cell Network. Available from: https://www.researchgate.net/publication/386888177_Epilepsy_EEG_Seizure_Prediction_Based_on_the_Combination_of_Graph_Convolutional_Neural_Network_Combined_with_Long-_and_Short-Term_Memory_Cell_Network [accessed Dec 16 2024].
+
 
 二、Reference: Epileptic Signal Classification with Deep EEG Features by Stacked CNNs
 
@@ -76,3 +81,136 @@ For this purpose, firstly, we explore empirical mode decomposition (EMD) to deco
 
 
 引用文章清单：
+
+一、引用情况：Mean amplitude spectrum based epileptic state classification for seizure prediction using convolutional neural networks
+Epilepsy EEG Seizure Prediction Based on the Combination of Graph Convolutional Neural Network Combined with Long- and Short-Term Memory Cell Network
+A systematic review of cross-patient approaches for EEG epileptic seizure prediction
+Seizure Onset Zone Detection Based on Convolutional Neural Networks and EEG Signals
+Enhanced Epileptic Seizure Detection Through Graph Spectral Analysis of EEG Signals
+A Signal-Based One-Dimensional Convolutional Neural Network (SB 1D CNN) Model for Seizure Prediction
+A Mutual Information-Based Many-Objective Optimization Method for EEG Channel Selection in the Epileptic Seizure Prediction Task
+A Novel Optimized Deep Convolutional Neural Network for Efficient Seizure Stage Classification
+Automatic epileptic seizure detection based on persistent homology
+Epileptic seizure detection using scalogram-based hybrid CNN model on EEG signals
+Epileptic Seizures Detection Using iEEG Signals and Deep Learning Models
+An effective fusion model for seizure prediction: GAMRNN
+Circuits, Systems, and Signal Processing Epilepsy Detection with Multi-channel EEG Signals Utilizing AlexNet
+Epileptic seizures detection and the analysis of optimal seizure prediction horizon based on frequency and phase analysis
+CNN-based classification of epileptic states for seizure prediction using combined temporal and spectral features
+An improved BECT spike detection method with functional brain network features based on PLV
+Convergence of Artificial Intelligence and Neuroscience towards the Diagnosis of Neurological Disorders—A Scoping Review
+Machine learning seizure prediction: One problematic but accepted practice
+Prédiction des crises épileptiques par analyse temps réel des données électroencéphalographiques
+Modeling and Prediction of Pain Related Neural Firings Using Deep Learning
+Patient-specific solution of the electrocorticography forward problem in deforming brain
+An Intelligent Epileptic Prediction System Based on Synchrosqueezed Wavelet Transform and Multi-Level Feature CNN for Smart Healthcare IoT
+Predicting Epileptic Seizures from EEG Spectral Band Features Using Convolutional Neural Network
+Pediatric Epilepsy Assessment Based on EEG Analysis
+A Modified LSTM Framework for Analyzing COVID-19 Effect on Emotion and Mental Health during Pandemic Using the EEG Signals
+EPILETIC SEIZURE DETECTION USING MODIFIED XGBOOST CLASSIFIER MODEL
+Two-layer LSTM network-based prediction of epileptic seizures using EEG spectral features
+Landscape Perception Identification and Classification Based on Electroencephalogram (EEG) Features
+A Modified XG Boost Classifier Model for Detection of Seizures and Non-Seizures
+Determinant of Covariance Matrix Model Coupled with AdaBoost Classification Algorithm for EEG Seizure Detection
+Analysis of Epileptic iEEG Data by Applying Convolutional Neural Networks to Low-Frequency Scalograms
+Patient-specific solution of the electrocorticography forward problem using biomechanics-based image registration
+An optimized deep learning network model for EEG based seizure classification using synchronization and functional connectivity measures
+A Deep Learning based Ensemble Learning Method for Epileptic Seizure Prediction
+Automatic epileptic seizure recognition using reliefF feature selection and long short term memory classifier
+Artificial Intelligence in Epilepsy
+A Deep Learning Approach for Automatic Seizure Detection in Children With Epilepsy
+A Deep Learning Approach for Automatic Seizure Detection in Children With Epilepsy
+An Effective Cluster-Based Outlier Detection with Optimized Deep Neural Network for Epileptic Seizure Detection and Classification Model
+FPGA based real-time epileptic seiz(20)ure prediction system
+Epileptic EEG Classification Using Synchrosqueezing Transform with Machine and Deep Learning Techniques
+Transfer discriminative dictionary learning with label consistency for classification of EEG signals of epilepsy
+Comparison of Frontal-Temporal Channels in Epilepsy Seizure Prediction Based on EEMD-ReliefF and DNN
+Deep Convolutional Neural Network-Based Epileptic Electroencephalogram (EEG) Signal Classification
+A comparative analysis of pooling strategies for convolutional neural network based Hindi ASR
+IoT and cloud computing based automatic epileptic seizure detection using HOS features based random forest classification
+Multilayer one-class extreme learning machine
+A review of epilepsy detection and prediction methods based on EEG signal processing and deep learning
+Epileptic Seizure Prediction Using Electroencephalogram Signals
+An efficient channel recurrent Criss-cross attention network for epileptic seizure prediction
+A Real-time Epilepsy Seizure Detection Approach based on EEG using Short-time Fourier Transform and Google-Net Convolutional Neural Network
+Epileptic Seizure Prediction Using Deep Network with Transfer Learning
+Real-time epilepsy seizure detection based on EEG using tunable-Q wavelet transform and convolutional neural network
+An Extensive Review of Machine Learning Techniques for EEG Signal Processing
+A Spatiotemporal Channel Attention Residual Network With Extended Series Mean Amplitude Spectrum for Epilepsy Detection
+Automatic Seizure Detection Using Logarithmic Euclidean-Gaussian Mixture Models (LE-GMMs) and Improved Deep Forest Learning
+Recent Advances on Convolutional Architectures in Medical Applications: Classical or Quantum?
+A general sample-weighted framework for epileptic seizure prediction
+Multi-model decision-making seizure types classification based on transfer learning
+Applications of Artificial Intelligence in Automatic Detection of Epileptic Seizures Using EEG Signals: A Review
+Mathematical Modeling and Diagnostics Using Neural Networks and a Genetic Algorithm for Epilepsy Patients
+Classification of myocardial infarction based on ECG signals and multi-network stacking model
+An overview of deep learning techniques for epileptic seizures detection and prediction based on neuroimaging modalities: Methods, challenges, and future works
+Seizure detection algorithm based on improved functional brain network structure feature extraction
+Review of Machine and Deep Learning Techniques in Epileptic Seizure Detection using Physiological Signals and Sentiment Analysis
+An EEG based real-time epilepsy seizure detection approach using discrete wavelet transform and machine learning methods
+Deep feature fusion based childhood epilepsy syndrome classification from electroencephalogram
+Epilepsy Detection from Brain EEG Using Convolutional Neural Network
+Intelligent fault diagnosis using image representation of multi-domain features
+Deep learning based smart health monitoring for automated prediction of epileptic seizures using spectral analysis of scalp EEG
+Seizure prediction in scalp EEG based channel attention dual-input convolutional neural network
+Linear and non-linear feature extraction from rat electrocorticograms for seizure detection by support vector machine
+Geometric Deep Learning for Subject Independent Epileptic Seizure Prediction Using Scalp EEG Signals
+An Epileptic Seizure Prediction Model based on a Time-wise Attention Simulation Module and a Pretrained ResNet
+Classification and analysis of epileptic EEG recordings using convolutional neural network and class activation mapping
+Epileptic Classification With Deep-Transfer-Learning-Based Feature Fusion Algorithm
+Epileptic Seizure Detection and Anticipation using Deep Learning with Ordered Encoding of Spectrogram Features
+Efficient communication and EEG signal classification in wavelet domain for epilepsy patients
+Epileptic State Classification by Fusing Hand-Crafted and Deep Learning EEG Features
+Efficient Communication and Classification in Wavelet Domain for Epileptic Patients
+Hierarchy Graph Convolution Network and Tree Classification for Epileptic Detection on Electroencephalography Signals
+Epileptic Signal Classification Based on Synthetic Minority Oversampling and Blending Algorithm
+Epileptic State Classification based on Intrinsic Mode Function and Wavelet Packet Decomposition
+Epileptic Signal Classification with Deep Transfer Learning Feature on Mean Amplitude Spectrum
+Epileptic Signal Classification with Deep EEG Features by Stacked CNNs
+
+
+
+
+
+
+
+二、引用情况： Epileptic Signal Classification with Deep EEG Features by Stacked CNNs
+Digital Twin for EEG seizure prediction using time reassigned Multisynchrosqueezing transform-based CNN-BiLSTM-Attention mechanism model
+Multimodal EEG-fNIRS Seizure Pattern Decoding Using Vision Transformer
+A review of epilepsy detection and prediction methods based on EEG signal processing and deep learning
+A lightweight 1D-CNN-GRU model for epileptic seizure prediction
+Reporting existing datasets for automatic epilepsy diagnosis and seizure detection
+EEG Datasets in Machine Learning Applications of Epilepsy Diagnosis and Seizure Detection
+Cluster Embedding Joint-Probability-Discrepancy Transfer For Cross-subject Seizure Detection
+Channel Increment Strategy-Based 1D Convolutional Neural Networks for Seizure Prediction Using Intracranial EEG
+CNN-LDNF: an image feature representation approach with multi-space mapping
+TIE-EEGNet: Temporal Information Enhanced EEGNet for Seizure Subtype Classification
+An Intelligent Epileptic Prediction System Based on Synchrosqueezed Wavelet Transform and Multi-Level Feature CNN for Smart Healthcare IoT
+Seizure Prediction Using EEG Channel Selection Method
+Early seizure detection in childhood focal epilepsy with electroencephalogram feature fusion on deep autoencoder learning and channel correlations
+Review on Epilepsy Detection with Explainable Artificial Intelligence
+3D residual-attention-deep-network-based childhood epilepsy syndrome classification
+Epileptic Seizure Detection with Hybrid Time-Frequency EEG Input: A Deep Learning Approach
+An efficient epileptic seizure classification system using empirical wavelet transform and multi-fuse reduced deep convolutional neural network with digital implementation
+Childhood epilepsy syndromes classification based on fused features of electroencephalogram and electrocardiogram
+Machine Learning Algorithms for Epilepsy Detection Based on Published EEG Databases: A Systematic Review
+Residual GCB-Net: Residual Graph Convolutional Broad Network on Emotion Recognition
+BECT Spike Detection based on Novel EEG Sequence Features and LSTM Algorithms
+Open and free EEG datasets for epilepsy diagnosis
+Variable Weight Algorithm for Convolutional Neural Networks and its Applications to Classification of Seizure Phases and Types
+A novel epileptic seizure detection system using scalp EEG signals based on hybrid CNN-SVM classifier
+One Dimensional Convolutional Neural Networks for Seizure Onset Detection Using Long-term Scalp and Intracranial EEG
+Deep Learning in EEG: Advance of the Last Ten-Year Critical Period
+Unsupervised Eye Blink Artifact Detection From EEG With Gaussian Mixture Model
+Analysis Between ELM and ANN in EMG Signals Obtained for the Control of a Robotic Hand Prosthesis
+Deep Learning in EEG: Advance of the Last Ten-Year Critical Period
+Brainwave Classification for Character-Writing Application using EMD-based GMM and KELM approaches
+Urban Acoustic Classification based on Deep Feature Transfer Learning
+Regularized correntropy criterion based semi-supervised ELM
+Epilepsy EEG Seizure Prediction Based on the Combination of Graph Convolutional Neural Network Combined with Long- and Short-Term Memory Cell Network
+Evolving Approaches in Epilepsy Management: Harnessing Internet of Things and Deep Learning
+Epilepsy Detection with CNN and Explanation with Layer-wise Relevance Propagation
+Comprehensive Survey of Machine Learning Techniques for Seizure Detection and Prediction: Challenges and Future Directions
+MD-DCNN: Multi-Scale Dilation-Based Deep Convolution Neural Network for epilepsy detection using electroencephalogram signals
+Seizure Detection of West Syndrome Based on Hybrid Optimization of Entropies With Multisensor EEG Data
+
