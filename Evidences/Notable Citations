@@ -6,6 +6,11 @@ College of Information Science Electronic Engineering, Zhejiang University, Hang
 3.A Mutual Information-Based Many-Objective Optimization Method for EEG Channel Selection in the Epileptic Seizure Prediction Task
 Previous research has shown promising results using con-volutional neural networks (CNNs) for epileptic seizureprediction. For example, Hu et al. [22] used a CNN model andachieved an accuracy of 86.25% on the CHB-MIT dataset.The model demonstrated an improvement of nearly 12% inaccuracy for identifying preictal samples closer to a seizure,compared to those further in time. 
 
+4.Epileptic Seizures Detection Using iEEG Signals and Deep Learning Models
+
+In reference [10], the authors addressed a five-category classification problem bydividing the preictal EEG signal into three consecutive segments. The categoriesincluded the interictal state, three preictal states (PreI, PreII, and PreIII), and one 
+ictal state. They proposed a CNN algorithm combined with SVM based on DSS (deepsupervised–supervised) and achieved an overall accuracy of 86.25% after 80 fixediterations 
+
 
 从ResearchGate里获取Notable citations：
 https://www.researchgate.net/publication/336250746_Epileptic_Signal_Classification_with_Deep_EEG_Features_by_Stacked_CNNs/citations
