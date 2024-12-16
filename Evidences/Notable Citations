@@ -1,3 +1,10 @@
+
+从ResearchGate里获取Notable citations：
+https://www.researchgate.net/publication/336250746_Epileptic_Signal_Classification_with_Deep_EEG_Features_by_Stacked_CNNs/citations
+https://www.researchgate.net/publication/330832390_Mean_amplitude_spectrum_based_epileptic_state_classification_for_seizure_prediction_using_convolutional_neural_networks
+
+
+
 1.Hierarchy Graph Convolution Network and Tree Classification for Epileptic Detection on Electroencephalography Signals   Difei Zeng   Kejie Huang
 College of Information Science Electronic Engineering, Zhejiang University, Hangzhou, China
 结果做了对比，可以找他要封推荐信   huangkejie@zju.edu.cn
@@ -20,6 +27,7 @@ With a large amount of data, it outperforms traditional feature extraction in te
 
 7.An Intelligent Epileptic Prediction System Based on Synchrosqueezed Wavelet Transform and Multi-Level Feature CNN for Smart Healthcare IoT
 Other studies [23][24][25][26][27] used the raw EEG signals without any preprocessing and also achieved good results in predicting epileptic seizures. Besides, Cao and Hu et al. [28][29][30][31] achieved multi level prediction of epilepsy and obtained good results using the Mean Amplitude Spectrum (MAS)
-从ResearchGate里获取Notable citations：
-https://www.researchgate.net/publication/336250746_Epileptic_Signal_Classification_with_Deep_EEG_Features_by_Stacked_CNNs/citations
-https://www.researchgate.net/publication/330832390_Mean_amplitude_spectrum_based_epileptic_state_classification_for_seizure_prediction_using_convolutional_neural_networks
+
+8.Pediatric Epilepsy Assessment Based on EEG Analysis
+[5] use power spectral analysis to extract features per subject for each time window, while Hu et al. [6] propose the partition of the preictal interval and distinguish the preictal subintervals from each other, in order to detect the preictal state
+
