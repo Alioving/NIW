@@ -3,11 +3,13 @@
 https://www.researchgate.net/publication/336250746_Epileptic_Signal_Classification_with_Deep_EEG_Features_by_Stacked_CNNs/citations
 https://www.researchgate.net/publication/330832390_Mean_amplitude_spectrum_based_epileptic_state_classification_for_seizure_prediction_using_convolutional_neural_networks
 
+Reference: Mean amplitude spectrum based epileptic state classification for seizure prediction using convolutional neural networks
 
 
 1.Hierarchy Graph Convolution Network and Tree Classification for Epileptic Detection on Electroencephalography Signals   Difei Zeng   Kejie Huang
 College of Information Science Electronic Engineering, Zhejiang University, Hangzhou, China
 结果做了对比，可以找他要封推荐信   huangkejie@zju.edu.cn
+
 2. Seizure Onset Zone Detection Based on Convolutional Neural Networks and EEG Signals
 
 3.A Mutual Information-Based Many-Objective Optimization Method for EEG Channel Selection in the Epileptic Seizure Prediction Task
@@ -30,4 +32,13 @@ Other studies [23][24][25][26][27] used the raw EEG signals without any preproce
 
 8.Pediatric Epilepsy Assessment Based on EEG Analysis
 [5] use power spectral analysis to extract features per subject for each time window, while Hu et al. [6] propose the partition of the preictal interval and distinguish the preictal subintervals from each other, in order to detect the preictal state
+
+9.Two-layer LSTM network-based prediction of epileptic seizures using EEG spectral features
+Truong et al. [28] have proposed a convolutional neural network (CNN)-based generalized epileptic seizure prediction approach with short-time Fourier transform-based pre-processing of 30 s duration EEG segments and have achieved the results of seizure prediction with a sensitivity of 81.2%. A similar approach presented by Hu et al. [29] makes use of CNN for feature extraction from the mean amplitude spectrum of 19 frequency bands taken from 15-channel EEG segments of 2 s, which classifies seizure stages using SVM classifier with a sensitivity of 86.25%.
+
+10.An Effective Cluster-Based Outlier Detection with Optimized Deep Neural Network for Epileptic Seizure Detection and Classification Model
+[8] produced a Mean Amplitude Spectrum (MAS) map from EEG signal and embedded CNNs with SVMs for the purpose of computing feature extraction as well as classification. As a result, maximum seizure prediction accuracy has been attained.
+
+11.Epileptic EEG Classification Using Synchrosqueezing Transform with Machine and Deep Learning Techniques
+The obtained results from the proposed ML-based methodand the DL-based method are promising compared with other recently published papers [15], [16].
 
