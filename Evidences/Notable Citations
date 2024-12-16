@@ -14,7 +14,12 @@ ictal state. They proposed a CNN algorithm combined with SVM based on DSS (deeps
 5. Epileptic seizures detection and the analysis of optimal seizure prediction horizon based on frequency and phase analysis
 discussion 部分
 
+6.Patient-specific solution of the electrocorticography forward problem in deforming brain
+With a large amount of data, it outperforms traditional feature extraction in terms of classification accuracy ( Hu et al., 2019 ). 
 
+
+7.An Intelligent Epileptic Prediction System Based on Synchrosqueezed Wavelet Transform and Multi-Level Feature CNN for Smart Healthcare IoT
+Other studies [23][24][25][26][27] used the raw EEG signals without any preprocessing and also achieved good results in predicting epileptic seizures. Besides, Cao and Hu et al. [28][29][30][31] achieved multi level prediction of epilepsy and obtained good results using the Mean Amplitude Spectrum (MAS)
 从ResearchGate里获取Notable citations：
 https://www.researchgate.net/publication/336250746_Epileptic_Signal_Classification_with_Deep_EEG_Features_by_Stacked_CNNs/citations
 https://www.researchgate.net/publication/330832390_Mean_amplitude_spectrum_based_epileptic_state_classification_for_seizure_prediction_using_convolutional_neural_networks
