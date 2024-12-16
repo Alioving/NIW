@@ -3,6 +3,8 @@ College of Information Science Electronic Engineering, Zhejiang University, Hang
 结果做了对比，可以找他要封推荐信   huangkejie@zju.edu.cn
 2. Seizure Onset Zone Detection Based on Convolutional Neural Networks and EEG Signals
 
+3.A Mutual Information-Based Many-Objective Optimization Method for EEG Channel Selection in the Epileptic Seizure Prediction Task
+Previous research has shown promising results using con-volutional neural networks (CNNs) for epileptic seizureprediction. For example, Hu et al. [22] used a CNN model andachieved an accuracy of 86.25% on the CHB-MIT dataset.The model demonstrated an improvement of nearly 12% inaccuracy for identifying preictal samples closer to a seizure,compared to those further in time. 
 
 
 从ResearchGate里获取Notable citations：
