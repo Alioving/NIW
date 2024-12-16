@@ -74,4 +74,5 @@ Artificial neural networks can collect information on samples, generalize, and t
 7.Brainwave Classification for Character-Writing Application using EMD-based GMM and KELM approaches （important）
 For this purpose, firstly, we explore empirical mode decomposition (EMD) to decompose the EEG signal into intrinsic mode functions (IMFs), which are used via six statistical features as the input features of the brainwave classification for the character-writing application. Secondly, by getting inspired by [16,17] that the shallow learning classifiers provide the promising performance for the classification of binary classes, Gaussian mixture model (GMM) and kernel extreme learning machine (KELM) are applied to distinguish between a circle and straight line characters. Finally, the score combination of GMM and KELM is proposed to fuse the advantages based on different classifiers
 
-8.
+
+引用文章清单：
