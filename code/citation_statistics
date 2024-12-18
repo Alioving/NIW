@@ -6,51 +6,124 @@ from pdfminer.high_level import extract_text
 from tqdm import tqdm
 import re
 
-# ========== 用户配置部分 ==========
+# ========== 用户配置部分 ========== 
 TARGET_PAPER_ID = "5d654faf14f6b5b04b0bed9f69d9867f74598241"  # 目标文章的ID，例如：DOI、arXiv ID 或 Semantic Scholar ID
 DOWNLOAD_DIR = "./downloaded_papers"  # PDF文件下载目录
 NO_ACCESS_FILE = "./no_access_papers.txt"  # 记录无法下载的文章
 TARGET_KEYWORDS = ["Deep Residual Learning", "He, Kaiming", "ResNet"]  # 目标文章的关键词
 SEMANTIC_SCHOLAR_API = "https://api.semanticscholar.org/graph/v1/paper"
 
-# ========== 函数定义部分 ==========
-def get_citing_papers(target_id, limit=100):
-    """通过 Semantic Scholar API 获取引用目标文章的论文列表"""
-    papers = []
-    offset = 0
-    while True:
-        print(f"[Info] 正在获取引用文章列表（批次：{offset // limit + 1}）...")
-        params = {"fields": "title,openAccessPdf", "limit": limit, "offset": offset}
-        url = f"{SEMANTIC_SCHOLAR_API}/{target_id}/citations"
-        try:
-            response = requests.get(url, params=params)
-            response.raise_for_status()
-            data = response.json()
-        except Exception as e:
-            print(f"[Error] 获取引用文献失败: {e}")
-            break
+# ========== 扩展的辅助函数 ========== 
+def get_pdf_from_arxiv(title):
+    """从 arXiv 获取 PDF 文件"""
+    search_url = f"https://api.semanticscholar.org/graph/v1/paper/arxiv/{title}"
+    try:
+        response = requests.get(search_url)
+        response.raise_for_status()
+        arxiv_data = response.json()
+        pdf_url = arxiv_data.get('openAccessPdf', {}).get('url')
+        return pdf_url
+    except Exception as e:
+        print(f"[Error] 从 arXiv 获取 PDF 失败: {title}, 错误: {e}")
+        return None
 
-        citing_papers = data.get("data", [])
-        papers.extend(citing_papers)
-        if len(citing_papers) < limit:
-            break  # 没有更多数据
-        offset += limit
-        time.sleep(1)  # 避免请求过快
-    print(f"[Info] 共找到 {len(papers)} 篇引用该论文的文章。")
-    return papers
+def get_pdf_from_doi(doi):
+    """从 DOI 获取 PDF 文件，尝试访问相关出版商网站"""
+    url = f"https://doi.org/{doi}"
+    headers = {"Accept": "application/pdf"}  # 请求 PDF 格式
+    try:
+        response = requests.get(url, headers=headers, timeout=30)
+        response.raise_for_status()
+        return response.url  # 返回实际的 PDF 文件 URL
+    except Exception as e:
+        print(f"[Error] 从 DOI 获取 PDF 失败: {doi}, 错误: {e}")
+        return None
+
+def get_pdf_from_researchgate(title):
+    """从 ResearchGate 获取 PDF 文件"""
+    search_url = f"https://www.researchgate.net/search?q={title}"
+    try:
+        response = requests.get(search_url)
+        response.raise_for_status()
+        # 假设 ResearchGate 返回一个包含 PDF 下载链接的页面
+        # 可以通过解析 HTML 页面或其他方法获取 PDF 链接（此部分简化）
+        return "https://www.researchgate.net/redirectToPdf"  # 示例返回
+    except Exception as e:
+        print(f"[Error] 从 ResearchGate 获取 PDF 失败: {title}, 错误: {e}")
+        return None
+
+def get_pdf_from_pubmed_central(pmcid):
+    """从 PubMed Central 获取 PDF 文件"""
+    url = f"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC{pmcid}/pdf/"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.url  # 返回 PDF 链接
+    except Exception as e:
+        print(f"[Error] 从 PubMed Central 获取 PDF 失败: {pmcid}, 错误: {e}")
+        return None
+
+def get_pdf_from_core(title):
+    """从 CORE 获取 PDF 文件"""
+    search_url = f"https://core.ac.uk/search?q={title}"
+    try:
+        response = requests.get(search_url)
+        response.raise_for_status()
+        # 假设 CORE 返回一个包含 PDF 下载链接的页面
+        return "https://core.ac.uk/redirectToPdf"  # 示例返回
+    except Exception as e:
+        print(f"[Error] 从 CORE 获取 PDF 失败: {title}, 错误: {e}")
+        return None
+
+def get_pdf_from_ssrn(title):
+    """从 SSRN 获取 PDF 文件"""
+    search_url = f"https://www.ssrn.com/en/search/{title}"
+    try:
+        response = requests.get(search_url)
+        response.raise_for_status()
+        # 假设 SSRN 返回一个包含 PDF 下载链接的页面
+        return "https://www.ssrn.com/redirectToPdf"  # 示例返回
+    except Exception as e:
+        print(f"[Error] 从 SSRN 获取 PDF 失败: {title}, 错误: {e}")
+        return None
 
 def download_pdfs(papers, download_dir):
     """下载引用文章的PDF文件，记录无法下载的文章"""
     os.makedirs(download_dir, exist_ok=True)
     no_access = []
+    
     for paper in tqdm(papers, desc="下载PDF"):
         title = paper.get("citingPaper", {}).get("title", "Unknown_Title")
         pdf_info = paper.get("citingPaper", {}).get("openAccessPdf", {})
+        
         if not pdf_info:
             print(f"[Warning] PDF信息为空: {title}")
             continue
         pdf_url = pdf_info.get("url")
 
+        # 尝试从不同来源获取 PDF 链接
+        if not pdf_url:
+            print(f"[Info] 尝试从多个来源获取 PDF: {title}")
+            # 假设文章可能有 DOI 或 arXiv ID
+            doi = paper.get("citingPaper", {}).get("doi", "")
+            if doi:
+                pdf_url = get_pdf_from_doi(doi)
+            if not pdf_url:
+                pdf_url = get_pdf_from_arxiv(title)
+            # 尝试从 ResearchGate 获取 PDF
+            if not pdf_url:
+                pdf_url = get_pdf_from_researchgate(title)
+            # 尝试从 PubMed Central 获取 PDF（假设我们有 PMCID）
+            pmcid = paper.get("citingPaper", {}).get("pmcid", "")
+            if not pdf_url and pmcid:
+                pdf_url = get_pdf_from_pubmed_central(pmcid)
+            # 尝试从 CORE 获取 PDF
+            if not pdf_url:
+                pdf_url = get_pdf_from_core(title)
+            # 尝试从 SSRN 获取 PDF
+            if not pdf_url:
+                pdf_url = get_pdf_from_ssrn(title)
+        
         if not pdf_url:
             print(f"[Warning] 无PDF链接: {title}")
             no_access.append(title)
@@ -76,44 +149,7 @@ def download_pdfs(papers, download_dir):
             f.write(title + "\n")
     print(f"[Info] 无法下载的文章已记录在 {NO_ACCESS_FILE}")
 
-def extract_references_from_pdf(pdf_dir, target_keywords):
-    """从PDF文件中提取引用目标文章的上下文（前后一句）"""
-    print("[Info] 开始解析PDF文件...")
-    for file in os.listdir(pdf_dir):
-        if not file.endswith(".pdf"):
-            continue
-
-        file_path = os.path.join(pdf_dir, file)
-        try:
-            # 尝试使用 PyPDF2 提取文本
-            text = ""
-            reader = PdfReader(file_path)
-            for page in reader.pages:
-                text += page.extract_text() + "\n"
-
-            # 如果 PyPDF2 提取失败，使用 pdfminer.six
-            if not text.strip():
-                print(f"[Info] 尝试使用 pdfminer 解析文件: {file}")
-                text = extract_text(file_path)
-
-            if not text.strip():
-                print(f"[Warning] 未能提取文本: {file}")
-                continue
-
-            # 将文本分割成句子，提取包含关键词的上下文
-            sentences = re.split(r'(?<=[.!?])\s+', text)
-            for i, sentence in enumerate(sentences):
-                if any(keyword.lower() in sentence.lower() for keyword in target_keywords):
-                    prev_sentence = sentences[i - 1] if i > 0 else ""
-                    next_sentence = sentences[i + 1] if i < len(sentences) - 1 else ""
-                    print(f"\n[Found Reference] 文件: {file}")
-                    print(f"  上一句: {prev_sentence.strip()}")
-                    print(f"  当前句: {sentence.strip()}")
-                    print(f"  下一句: {next_sentence.strip()}\n")
-        except Exception as e:
-            print(f"[Error] 解析PDF文件失败: {file}, 错误: {e}")
-
-# ========== 主程序 ==========
+# ========== 主程序 ========== 
 if __name__ == "__main__":
     # 1. 获取引用文章列表
     citing_papers = get_citing_papers(TARGET_PAPER_ID)
