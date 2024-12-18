@@ -2,198 +2,218 @@ import os
 import time
 import requests
 import logging
-from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-from concurrent.futures import ThreadPoolExecutor
-from webdriver_manager.chrome import ChromeDriverManager
-from PyPDF2 import PdfReader
-from pdfminer.high_level import extract_text
-from pymupdf import fitz  # PyMuPDF
-import pytesseract
-from PIL import Image
-import random
-import argparse
 import re
+import pandas as pd
+from bs4 import BeautifulSoup
+from concurrent.futures import ThreadPoolExecutor
+from pdfminer.high_level import extract_text
+from transformers import pipeline
+from nltk.sentiment import SentimentIntensityAnalyzer
+from sklearn.feature_extraction.text import CountVectorizer
+from textblob import TextBlob
+import networkx as nx
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger()
 
-# ========== 配置部分 ==========
+# 配置部分
 TARGET_KEYWORDS = ["Deep Residual Learning", "He, Kaiming", "ResNet"]  # 目标文章的关键词
 DOWNLOAD_DIR = "./downloaded_papers"  # PDF文件下载目录
 NO_ACCESS_FILE = "./no_access_papers.txt"  # 记录无法下载的文章
+OUTPUT_EXCEL_FILE = "./author_info_with_context_and_NIW.xlsx"  # 输出的 Excel 文件
 MAX_RETRIES = 3  # 最大重试次数
 TIMEOUT = 60  # 请求超时时间
 MAX_WORKERS = 4  # 下载并发线程数
 
-# ========== Selenium WebDriver 配置 ==========
-def get_driver():
-    """获取 Selenium WebDriver，自动管理驱动"""
-    options = Options()
-    options.headless = True  # 启用无头模式
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-    return driver
+# 关键词库：包括夸赞词汇、扩展词汇和方法词汇
+PRAISE_KEYWORDS = ['groundbreaking', 'innovative', 'important', 'novel', 'pioneering', 'revolutionary', 'critical', 'key contribution', 'major breakthrough', 'significant impact', 'influential', 'state-of-the-art']
+EXTENSION_KEYWORDS = ['extend', 'build upon', 'based on', 'on the foundation of', 'as proposed by', 'modification of', 'adapting', 'improving', 'enhancing', 'applying', 'further study', 'derived from', 'inspired by']
+APPLICATION_KEYWORDS = ['applied', 'implementation', 'use of', 'practical application', 'real-world usage', 'test on', 'experiments with']
 
-# ========== 下载PDF相关函数 ==========
-def retry_request(url, retries=MAX_RETRIES):
-    """带重试机制的请求"""
-    for _ in range(retries):
-        try:
-            response = requests.get(url, timeout=TIMEOUT)
-            response.raise_for_status()
-            return response
-        except Exception as e:
-            logger.warning(f"请求失败: {e}. 重试中...")
-            time.sleep(random.uniform(1, 3))  # 随机延迟避免被封禁
-    logger.error(f"请求失败: {url} 超过最大重试次数")
-    return None
+# ========== 情感分析的增强部分 ==========
+def analyze_sentiment(text):
+    """使用TextBlob和VADER分析情感"""
+    blob = TextBlob(text)
+    # 使用VADER进行情感分析，返回积极、消极、中立的情感评分
+    sia = SentimentIntensityAnalyzer()
+    sentiment_score = sia.polarity_scores(text)
+    # 判断情感倾向
+    if sentiment_score['compound'] >= 0.05:
+        return "正面"
+    elif sentiment_score['compound'] <= -0.05:
+        return "负面"
+    else:
+        return "中立"
 
-def download_pdf(pdf_url, file_path):
-    """下载 PDF 文件"""
+def analyze_sentiment_advanced(text):
+    """使用预训练的BERT模型进行更准确的情感分析"""
+    sentiment_pipeline = pipeline("sentiment-analysis")
+    result = sentiment_pipeline(text)
+    return result[0]['label']  # 返回模型的情感标签（POSITIVE/NEGATIVE）
+
+# ========== 构建引用图谱 ==========
+def build_citation_network(papers):
+    """构建引用网络图谱"""
+    G = nx.Graph()
+    for paper in papers:
+        title = paper.get("citingPaper", {}).get("title", "Unknown_Title")
+        citing_paper_id = paper.get("citingPaper", {}).get("id", "")
+        
+        citing_paper_url = paper.get("citingPaper", {}).get("url", "")
+        authors, institutions, email = extract_authors_and_email(citing_paper_url)
+        
+        # 添加文章节点
+        G.add_node(title, authors=authors, institutions=institutions, email=email)
+        
+        # 添加与被引用论文的连接（引用关系）
+        cited_paper = paper.get("citedPaper", {}).get("title", "Unknown_Cited_Paper")
+        G.add_edge(citing_paper_id, cited_paper, relationship="cites")
+
+    return G
+
+# ========== 自动化评估标准扩展 ==========
+def extract_keywords_from_context(context):
+    """从引用内容中提取关键词，用于进一步分析"""
+    vectorizer = CountVectorizer(stop_words='english')
+    X = vectorizer.fit_transform([context])
+    keywords = vectorizer.get_feature_names_out()
+    return keywords
+
+# ========== 提取作者信息函数 ==========
+def extract_authors_and_email(paper_url):
+    """从论文页面提取作者、单位和邮箱信息"""
     try:
-        response = retry_request(pdf_url)
-        if response:
-            with open(file_path, "wb") as f:
-                for chunk in response.iter_content(chunk_size=8192):
-                    f.write(chunk)
-            logger.info(f"[Success] 下载完成: {file_path}")
-        else:
-            logger.error(f"[Error] 无法下载 PDF: {file_path}")
-    except Exception as e:
-        logger.error(f"[Error] 下载失败: {file_path}, 错误: {e}")
-
-# ========== 从不同网站获取PDF链接 ==========
-def get_pdf_from_researchgate(title):
-    """从 ResearchGate 获取 PDF 链接"""
-    search_url = f"https://www.researchgate.net/search?q={title}"
-    response = retry_request(search_url)
-    if response:
+        response = requests.get(paper_url)
+        response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
-        pdf_link = None
-        for link in soup.find_all('a', href=True):
-            if 'pdf' in link['href'].lower():
-                pdf_link = link['href']
-                break
-        return pdf_link
-    return None
 
-def get_pdf_from_core(title):
-    """从 CORE 获取 PDF 链接"""
-    search_url = f"https://core.ac.uk/search?q={title}"
-    response = retry_request(search_url)
-    if response:
-        soup = BeautifulSoup(response.text, 'html.parser')
-        pdf_link = None
-        for link in soup.find_all('a', href=True):
-            if 'pdf' in link['href'].lower():
-                pdf_link = link['href']
-                break
-        return pdf_link
-    return None
+        authors = []
+        email = ""
+        for author_tag in soup.find_all('a', class_="author"):
+            author_name = author_tag.get_text(strip=True)
+            authors.append(author_name)
 
-def get_pdf_from_ssrn(title):
-    """从 SSRN 获取 PDF 链接"""
-    search_url = f"https://www.ssrn.com/en/search/{title}"
-    driver = get_driver()
-    driver.get(search_url)
-    time.sleep(3)  # 等待网页加载
-    pdf_link = None
-    pdf_elements = driver.find_elements(By.TAG_NAME, 'a')
-    for element in pdf_elements:
-        if 'pdf' in element.get_attribute('href').lower():
-            pdf_link = element.get_attribute('href')
-            break
-    driver.quit()
-    return pdf_link
+        # 查找可能的通讯邮箱
+        email_tag = soup.find('a', href=re.compile("mailto:"))
+        if email_tag:
+            email = email_tag.get('href').replace('mailto:', '')
 
-# ========== 提取PDF文本 ==========
-def extract_text_from_pdf(file_path):
-    """从 PDF 文件中提取文本（使用 PyMuPDF）"""
-    try:
-        doc = fitz.open(file_path)
-        text = ""
-        for page_num in range(len(doc)):
-            page = doc.load_page(page_num)
-            text += page.get_text("text")
-        return text
+        # 假设单位信息在某个固定的标签中
+        institutions = []
+        institution_tags = soup.find_all('span', class_='institution')
+        for tag in institution_tags:
+            institutions.append(tag.get_text(strip=True))
+
+        return authors, institutions, email
+
     except Exception as e:
-        logger.error(f"无法提取文本: {file_path}, 错误: {e}")
-        return ""
+        logger.warning(f"无法从 {paper_url} 提取作者信息: {e}")
+        return [], [], ""
 
-def extract_text_from_image_pdf(file_path):
-    """从图片PDF中提取文本（使用 OCR）"""
+# ========== 从PDF中提取引用上下文 ==========
+def extract_references_from_pdf(file_path, target_keywords):
+    """从PDF中提取引用上下文（前后句）"""
     try:
-        images = convert_from_path(file_path)  # 需要安装 pdf2image 库
-        text = ""
-        for image in images:
-            text += pytesseract.image_to_string(image)
-        return text
-    except Exception as e:
-        logger.error(f"OCR 提取失败: {file_path}, 错误: {e}")
-        return ""
-
-def extract_references_from_pdf(pdf_dir, target_keywords):
-    """从 PDF 中提取引用目标文章的上下文"""
-    logger.info("[Info] 开始解析 PDF 文件...")
-    for file in os.listdir(pdf_dir):
-        if not file.endswith(".pdf"):
-            continue
-
-        file_path = os.path.join(pdf_dir, file)
-        text = extract_text_from_pdf(file_path)
+        text = extract_text(file_path)
         if not text:
-            text = extract_text_from_image_pdf(file_path)
+            logger.warning(f"未能提取文本: {file_path}")
+            return []
 
-        if text:
-            sentences = re.split(r'(?<=[.!?])\s+', text)
-            for i, sentence in enumerate(sentences):
-                if any(keyword.lower() in sentence.lower() for keyword in target_keywords):
-                    prev_sentence = sentences[i - 1] if i > 0 else ""
-                    next_sentence = sentences[i + 1] if i < len(sentences) - 1 else ""
-                    logger.info(f"\n[Found Reference] 文件: {file}")
-                    logger.info(f"  上一句: {prev_sentence.strip()}")
-                    logger.info(f"  当前句: {sentence.strip()}")
-                    logger.info(f"  下一句: {next_sentence.strip()}\n")
+        sentences = re.split(r'(?<=[.!?])\s+', text)
+        references = []
+        for i, sentence in enumerate(sentences):
+            if any(keyword.lower() in sentence.lower() for keyword in target_keywords):
+                prev_sentence = sentences[i - 1] if i > 0 else ""
+                next_sentence = sentences[i + 1] if i < len(sentences) - 1 else ""
+                references.append((prev_sentence.strip(), sentence.strip(), next_sentence.strip()))
+        
+        return references
+
+    except Exception as e:
+        logger.warning(f"无法提取引用上下文: {file_path}, 错误: {e}")
+        return []
+
+# ========== 判断引用是否有利于NIW ==========
+def assess_NIW_relevance(reference):
+    """评估引用内容是否有利于NIW申请"""
+    prev_sentence, curr_sentence, next_sentence = reference
+
+    # 检查是否夸赞论文
+    for keyword in PRAISE_KEYWORDS:
+        if keyword in curr_sentence.lower():
+            return "有利", f"引用内容包含正面评价或夸赞被引用论文的创新性：{curr_sentence}"
+
+    # 检查是否基于被引用论文的研究
+    for keyword in EXTENSION_KEYWORDS:
+        if keyword in curr_sentence.lower():
+            return "有利", f"引用内容表明基于被引用论文的基础展开研究：{curr_sentence}"
+
+    # 检查是否是应用相关的引用
+    for keyword in APPLICATION_KEYWORDS:
+        if keyword in curr_sentence.lower():
+            return "有利", f"引用内容表明该研究在实际应用中有所拓展或使用：{curr_sentence}"
+
+    # 使用情感分析判断是否夸赞被引用论文
+    sentiment = analyze_sentiment_advanced(curr_sentence)
+    if sentiment == "POSITIVE":
+        return "有利", f"引用内容表现为积极的情感评价：{curr_sentence}"
+
+    # 如果没有明显的夸赞、扩展或应用，判断为不利或不明确
+    return "不明确", f"引用内容未明显表明对被引用论文的扩展或正面评价：{curr_sentence}"
 
 # ========== 下载PDF并处理 ==========
-def download_papers_and_extract_references(papers, download_dir):
-    """下载论文并提取引用内容"""
+def download_papers_and_extract_info(papers, download_dir):
+    """下载论文并提取作者信息以及引用内容"""
     os.makedirs(download_dir, exist_ok=True)
     no_access = []
-    
+    data = []
+
     def process_paper(paper):
         title = paper.get("citingPaper", {}).get("title", "Unknown_Title")
         pdf_url = paper.get("citingPaper", {}).get("openAccessPdf", {}).get("url", "")
         
         if not pdf_url:
             logger.info(f"尝试从多个来源获取 PDF: {title}")
-            pdf_url = get_pdf_from_researchgate(title) or get_pdf_from_core(title) or get_pdf_from_ssrn(title)
-
+            pdf_url = find_pdf_url_from_alternatives(paper)  # 其他来源的方法
+        
         if not pdf_url:
-            logger.warning(f"没有找到 PDF 链接: {title}")
+            logger.warning(f"没有找到可用的PDF链接: {title}")
             no_access.append(title)
             return
-        
+
         file_name = f"{title.replace(' ', '_')[:50]}.pdf"
         file_path = os.path.join(download_dir, file_name)
-        download_pdf(pdf_url, file_path)
-        extract_references_from_pdf(download_dir, TARGET_KEYWORDS)
+
+        download_pdf(pdf_url, file_path)  # 下载PDF
+
+        # 提取引用文献中的作者信息
+        citing_paper_url = paper.get("citingPaper", {}).get("url", "")
+        authors, institutions, email = extract_authors_and_email(citing_paper_url)
+
+        # 提取引用上下文
+        references = extract_references_from_pdf(file_path, TARGET_KEYWORDS)
+
+        for reference in references:
+            prev_sentence, curr_sentence, next_sentence = reference
+            # 评估该引用是否有利于NIW
+            niw_relevance, reason = assess_NIW_relevance(reference)
+
+            for author, institution in zip(authors, institutions):
+                data.append({
+                    '引用文章': title,
+                    '作者': author,
+                    '单位': institution,
+                    '联系邮箱': email,
+                    '引用上下文': f"前句: {prev_sentence}, 当前句: {curr_sentence}, 后句: {next_sentence}",
+                    '是否有利于NIW': niw_relevance,
+                    '判断依据': reason
+                })
 
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         executor.map(process_paper, papers)
 
-    with open(NO_ACCESS_FILE, "w") as f:
-        for title in no_access:
-            f.write(title + "\n")
-    logger.info(f"[Info] 无法下载的文章已记录在 {NO_ACCESS_FILE}")
-
-# ========== 主程序入口 ==========
-def main():
-    parser = argparse.ArgumentParser(description="论文下载和引用提取")
-    parser.add_argument("papers", help="论文列表文件，包含引用目标论文的所有论文")
-    args = parser.parse_args()
-
-    # 假设 papers 是一个包含引用文献的列表（
+    # 输出到Excel文件
+    df = pd.DataFrame(data)
+    df.to_excel(OUTPUT_EXCEL_FILE, index=False)
+    logger.info(f"处理完成，结果保存到 {OUTPUT_EXCEL_FILE}")
