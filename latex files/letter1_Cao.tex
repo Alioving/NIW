@@ -1,0 +1,57 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{geometry}
+\geometry{left=1in,right=1in,top=1in,bottom=1in}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lipsum} % For dummy text
+
+\pagestyle{fancy}
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{}
+
+\title{Recommendation Letters for NIW Application}
+\author{}
+\date{}
+
+% Custom command to create a recommendation letter
+\newcommand{\recommendationletter}[5]{%
+    \begin{center}
+    {\LARGE \textbf{Recommendation for #1}} \\[1em]
+    #2 \\[2em] % Advisor's Name, Position, Institution
+    \textbf{Date:} #3 \\[1em] % Date
+    \end{center}
+    
+    To Whom It May Concern,\\[1em]
+    
+    I am writing to provide my highest recommendation for \textbf{#1} in support of his application for the National Interest Waiver (NIW). As his academic advisor at #4 for #5, I have had the opportunity to closely follow his research and observe his remarkable abilities as a scholar. Based on his exceptional contributions to the field of epileptic seizure prediction and his potential to further impact the medical and healthcare sectors, I am confident that his work aligns with the United States' national interests and is deserving of the NIW. \\[1em]
+    
+    % The content of the letter can be updated here as needed.
+    % Add specifics about the research and its impact.
+    
+    \textbf{Research Contributions and Achievements:} Hu Wenbin's research focuses on improving the prediction of epileptic seizures, particularly through novel approaches to analyzing electroencephalogram (EEG) signals. His work has significantly advanced the current methods of seizure prediction by addressing the challenge of accurately predicting seizures in real-time, which is critical for improving patient outcomes and reducing healthcare costs. His research combines advanced techniques in deep learning, specifically Convolutional Neural Networks (CNNs), to automatically extract features from raw EEG signals, improving prediction accuracy. \\[1em]
+
+    \textbf{Impact on U.S. National Interest:} The ability to predict seizures with greater accuracy is of immense importance for public health. Epilepsy affects over 3 million people in the U.S., and many individuals living with epilepsy face significant risks due to unpredictable seizures. Hu Wenbin’s work addresses this gap by providing a precise solution for seizure prediction, which has the potential to improve the lives of millions of Americans. \\[1em]
+    
+    \textbf{Conclusion:} I strongly recommend Hu Wenbin for the National Interest Waiver. His work on epileptic seizure prediction has the potential to greatly benefit public health in the United States. His contributions align perfectly with the country’s priorities in advancing healthcare technologies, and I have no doubt that his continued research will further strengthen the U.S.’s leadership in the field.\\[1em]
+
+    Sincerely,\\[1em]
+    #2\\ % Advisor's name again
+    #4 \\ % Advisor's Institution
+    \newpage
+}
+
+\begin{document}
+
+\title{Recommendation Letters for National Interest Waiver (NIW)}
+\maketitle
+
+% Applicant 1
+\recommendationletter{Hu Wenbin}{Dr. John Smith, Professor, Department of Biomedical Engineering, University of XYZ}{December 18, 2024}{University of XYZ}{2 years}
+
+% Applicant 2
+\recommendationletter{Jane Doe}{Prof. James Brown, Director, Department of Computer Science, University of ABC}{December 18, 2024}{University of ABC}{3 years}
+
+% Add more letters as needed by repeating the above \recommendationletter command
+
+\end{document}
