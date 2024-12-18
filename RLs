@@ -18,31 +18,43 @@ In a real application, each letter should be printed on official letterhead, sig
 --------------------------------------
 **1. Graduate Advisor (Master’s Research Supervisor)**
 
-[Date]
+[推荐人姓名]
+[推荐人职位]
+[推荐人单位名称]
+[单位地址]
+[日期]
 
-U.S. Citizenship and Immigration Services  
-[Address]
+To Whom It May Concern,
 
-Re: National Interest Waiver Recommendation for [Name of Beneficiary]
+I am writing to provide my highest recommendation for {\bf Wenbin Hu} in support of his application for the {\bf National Interest Waiver (NIW)}. As his academic advisor at Hangzhou Dianzi University for [时间长度], I have had the opportunity to closely follow his research and observe his remarkable abilities as a scholar. Based on his exceptional contributions to the field of {\bf epileptic seizure prediction} and his potential to further impact the medical and healthcare sectors, I am confident that his work aligns with the United States' national interests and is deserving of the NIW.
 
-Dear Officer:
+{\bf Research Contributions and Achievements}
+Hu Wenbin's research focuses on improving the prediction of {\bf epileptic seizures}, particularly through novel approaches to analyzing {\bf electroencephalogram (EEG) signals}. His work has significantly advanced the current methods of seizure prediction by addressing the challenge of accurately predicting seizures in real-time, which is critical for improving patient outcomes and reducing healthcare costs.
 
-It is my privilege to offer this strong recommendation on behalf of [Name of Beneficiary] in support of his National Interest Waiver petition. As a Professor of Biomedical Signal Processing and Control Engineering at [University Name], I had the distinct honor of serving as [Name of Beneficiary]’s primary graduate advisor from [start date] to [end date]. During this period, I closely supervised his Master’s research focusing on the advanced analysis of EEG (electroencephalogram) signals through machine learning methodologies aimed at predicting epileptic seizures.
+One of his most notable contributions is the introduction of a {\bf fine-grained classification of the interictal period} (the period between seizures), which is often overlooked in traditional seizure prediction models. While most existing systems focus primarily on the {\bf ictal phase} (the period during a seizure), Hu Wenbin’s research classifies the {\bf interictal period} into multiple stages. This provides a more precise method of predicting seizures by capturing subtle changes in brain activity during the interictal phase, which are often early indicators of impending seizures. By distinguishing these phases, his approach enhances the accuracy of predictions and allows for earlier intervention, improving patient safety and quality of life.
 
-Epilepsy is a prevalent neurological disorder affecting millions of Americans, imposing substantial emotional and economic burdens on patients, families, and the U.S. healthcare infrastructure. Early seizure prediction stands at the frontier of clinical neuroscience, as accurate warnings could enable timely interventions, reduce emergency hospital admissions, and significantly lower long-term care costs. [Name of Beneficiary] has made highly distinctive contributions to this field by integrating sophisticated Convolutional Neural Network (CNN) architectures, including stacked deep learning frameworks, to identify subtle preictal EEG biomarkers. His work, substantiated by peer-reviewed publications, not only surpasses conventional analytical approaches but also establishes new benchmarks for predictive accuracy and reliability.
+His research combines advanced techniques in {\bf deep learning}, specifically {\bf Convolutional Neural Networks (CNNs)}, to automatically extract features from raw EEG signals, which eliminates the need for manual feature extraction. This significantly improves the efficiency and accuracy of seizure prediction models. Hu Wenbin’s work has shown that these methods can predict seizures with much higher accuracy compared to traditional methods, reducing false positives and providing more reliable real-time predictions.
 
-These accomplishments are not academic exercises alone; they hold profound national significance. The United States invests heavily in improving patient outcomes, particularly in complex neurological conditions, through initiatives supported by the National Institutes of Health (NIH) and related agencies. [Name of Beneficiary]’s innovations directly align with these priorities, as his research promotes preventive medicine and cost-effective healthcare solutions. By enabling clinicians to anticipate seizures, his methods can optimize resource utilization and uphold U.S. leadership in medical technology innovation.
+{\bf Impact on U.S. National Interest}
+The ability to predict seizures with greater accuracy and lead time is of immense importance for both public health and healthcare innovation in the United States. {\bf {\bf Epilepsy affects over 3 million people in the U.S.}, and many individuals living with epilepsy face significant risks due to unpredictable seizures. Current methods are insufficient, and there is a critical need for improvements in prediction accuracy to better manage the condition. Hu Wenbin’s work addresses this gap by providing a more precise and scalable solution for seizure prediction, which has the potential to improve the lives of millions of Americans.
 
-Granting [Name of Beneficiary] a NIW will allow him to collaborate extensively with leading American research hospitals, medical device companies, and federal research initiatives without the delays associated with labor certification. The immediacy of his engagement will accelerate the translation of his findings into tangible clinical applications. His expertise, rare and specialized, is not readily replaceable within the existing U.S. labor market. Therefore, waiving the standard requirements is demonstrably in the national interest, ensuring that the United States can promptly harness his skills to advance public health and reinforce its position at the forefront of biomedical innovation.
+Beyond its impact on epilepsy, his research could have far-reaching implications for the development of predictive healthcare technologies. The methods he has developed could be applied to other neurological disorders, leading to innovations in early diagnosis and real-time prediction systems. His work directly supports U.S. goals of advancing {\bf biomedical technologies}, improving {\bf healthcare outcomes}, and reducing the {\bf economic burden} of neurological disorders.
 
-I offer my unequivocal and highest endorsement. Approving [Name of Beneficiary]’s NIW petition will yield substantial and enduring benefits for the United States.
+{\bf Future Potential and Leadership}
+Hu Wenbin is poised to continue making significant contributions to the field of {\bf neuroengineering} and {\bf biomedical signal processing}. His ability to integrate {\bf machine learning} with {\bf neurotechnology} positions him as a leader in the next generation of healthcare innovators. His research has already been presented at high-impact journals, earning recognition for its novelty and applicability.
 
+His future research promises to drive forward the development of {\bf predictive diagnostic tools} that could have transformative effects not only in epilepsy but also in a wide range of neurological conditions. I am confident that Hu Wenbin will continue to make significant contributions to healthcare innovation, particularly in the areas of {\bf neurotechnology} and {\bf personalized medicine.}
+
+{\bf Conclusion}
+In conclusion, I strongly recommend Hu Wenbin for the {\bf National Interest Waiver}. His work on {\bf epileptic seizure prediction}, especially his innovative approach to classifying the interictal period for more accurate predictions, has the potential to greatly benefit {\bf public health} in the United States. His contributions align perfectly with the country’s priorities in advancing {\bf healthcare technologies} and improving patient outcomes, and I have no doubt that his continued research will further strengthen the U.S.’s leadership in the field.
+
+Should you require any further information, please do not hesitate to contact me.
 
 Sincerely,
-
-[Signature]  
-[Name], Ph.D.  
-Professor, [University Name]
+[推荐人姓名]
+[推荐人职务]
+[推荐人单位名称]
+[推荐人联系方式]
 
 --------------------------------------
 **2. Former Internship Employer (Previous Company’s Boss)**
