@@ -1,0 +1,128 @@
+import os
+import time
+import requests
+from PyPDF2 import PdfReader
+from pdfminer.high_level import extract_text
+from tqdm import tqdm
+import re
+
+# ========== 用户配置部分 ==========
+TARGET_PAPER_ID = "5d654faf14f6b5b04b0bed9f69d9867f74598241"  # 目标文章的ID，例如：DOI、arXiv ID 或 Semantic Scholar ID
+DOWNLOAD_DIR = "./downloaded_papers"  # PDF文件下载目录
+NO_ACCESS_FILE = "./no_access_papers.txt"  # 记录无法下载的文章
+TARGET_KEYWORDS = ["Deep Residual Learning", "He, Kaiming", "ResNet"]  # 目标文章的关键词
+SEMANTIC_SCHOLAR_API = "https://api.semanticscholar.org/graph/v1/paper"
+
+# ========== 函数定义部分 ==========
+def get_citing_papers(target_id, limit=100):
+    """通过 Semantic Scholar API 获取引用目标文章的论文列表"""
+    papers = []
+    offset = 0
+    while True:
+        print(f"[Info] 正在获取引用文章列表（批次：{offset // limit + 1}）...")
+        params = {"fields": "title,openAccessPdf", "limit": limit, "offset": offset}
+        url = f"{SEMANTIC_SCHOLAR_API}/{target_id}/citations"
+        try:
+            response = requests.get(url, params=params)
+            response.raise_for_status()
+            data = response.json()
+        except Exception as e:
+            print(f"[Error] 获取引用文献失败: {e}")
+            break
+
+        citing_papers = data.get("data", [])
+        papers.extend(citing_papers)
+        if len(citing_papers) < limit:
+            break  # 没有更多数据
+        offset += limit
+        time.sleep(1)  # 避免请求过快
+    print(f"[Info] 共找到 {len(papers)} 篇引用该论文的文章。")
+    return papers
+
+def download_pdfs(papers, download_dir):
+    """下载引用文章的PDF文件，记录无法下载的文章"""
+    os.makedirs(download_dir, exist_ok=True)
+    no_access = []
+    for paper in tqdm(papers, desc="下载PDF"):
+        title = paper.get("citingPaper", {}).get("title", "Unknown_Title")
+        pdf_info = paper.get("citingPaper", {}).get("openAccessPdf", {})
+        if not pdf_info:
+            print(f"[Warning] PDF信息为空: {title}")
+            continue
+        pdf_url = pdf_info.get("url")
+
+        if not pdf_url:
+            print(f"[Warning] 无PDF链接: {title}")
+            no_access.append(title)
+            continue
+
+        file_name = f"{title.replace(' ', '_')[:50]}.pdf"
+        file_path = os.path.join(download_dir, file_name)
+
+        try:
+            response = requests.get(pdf_url, stream=True, timeout=60)
+            response.raise_for_status()
+            with open(file_path, "wb") as f:
+                for chunk in response.iter_content(chunk_size=8192):
+                    f.write(chunk)
+            print(f"[Success] 下载完成: {title}")
+        except Exception as e:
+            print(f"[Error] 无法下载: {title}, 错误: {e}")
+            no_access.append(title)
+
+    # 记录无法下载的文章
+    with open(NO_ACCESS_FILE, "w") as f:
+        for title in no_access:
+            f.write(title + "\n")
+    print(f"[Info] 无法下载的文章已记录在 {NO_ACCESS_FILE}")
+
+def extract_references_from_pdf(pdf_dir, target_keywords):
+    """从PDF文件中提取引用目标文章的上下文（前后一句）"""
+    print("[Info] 开始解析PDF文件...")
+    for file in os.listdir(pdf_dir):
+        if not file.endswith(".pdf"):
+            continue
+
+        file_path = os.path.join(pdf_dir, file)
+        try:
+            # 尝试使用 PyPDF2 提取文本
+            text = ""
+            reader = PdfReader(file_path)
+            for page in reader.pages:
+                text += page.extract_text() + "\n"
+
+            # 如果 PyPDF2 提取失败，使用 pdfminer.six
+            if not text.strip():
+                print(f"[Info] 尝试使用 pdfminer 解析文件: {file}")
+                text = extract_text(file_path)
+
+            if not text.strip():
+                print(f"[Warning] 未能提取文本: {file}")
+                continue
+
+            # 将文本分割成句子，提取包含关键词的上下文
+            sentences = re.split(r'(?<=[.!?])\s+', text)
+            for i, sentence in enumerate(sentences):
+                if any(keyword.lower() in sentence.lower() for keyword in target_keywords):
+                    prev_sentence = sentences[i - 1] if i > 0 else ""
+                    next_sentence = sentences[i + 1] if i < len(sentences) - 1 else ""
+                    print(f"\n[Found Reference] 文件: {file}")
+                    print(f"  上一句: {prev_sentence.strip()}")
+                    print(f"  当前句: {sentence.strip()}")
+                    print(f"  下一句: {next_sentence.strip()}\n")
+        except Exception as e:
+            print(f"[Error] 解析PDF文件失败: {file}, 错误: {e}")
+
+# ========== 主程序 ==========
+if __name__ == "__main__":
+    # 1. 获取引用文章列表
+    citing_papers = get_citing_papers(TARGET_PAPER_ID)
+    if not citing_papers:
+        print("[Error] 未找到引用文献，程序退出。")
+        exit()
+
+    # 2. 批量下载PDF文件
+    download_pdfs(citing_papers, DOWNLOAD_DIR)
+
+    # 3. 提取引用上下文
+    extract_references_from_pdf(DOWNLOAD_DIR, TARGET_KEYWORDS)
