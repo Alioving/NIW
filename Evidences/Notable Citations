@@ -65,7 +65,7 @@ Beijing Normal University at Zhuhai, Zhuhai 519087, China
 分析：他的文章用到了我提出的MAS特征
 
 
--------------6---------
+-------------4---------
 文章名
 Hierarchy Graph Convolution Network and Tree Classification for Epileptic Detection on Electroencephalography Signals
 
@@ -92,7 +92,7 @@ shen_hb@zju.edu.cn)
 
 分析： --大篇幅跟我的两篇论文做对比，浙江大学的，可以要封推荐信
 
--------------13---------
+-------------5---------
 文章名
 --EpilepsyNet: Novel automated detection of epilepsy using transformer model with EEG signals from 121 patient population
 
@@ -103,7 +103,7 @@ shen_hb@zju.edu.cn)
 
 分析：说我这篇文章提出的算法比当前已存在的算法效果都好
 
--------------1----------------------------------------------------------------------------------------
+-------------6---------------------------------------------------------------------------------------
 文章名
 A Mutual Information-Based Many-Objective Optimization Method for EEG Channel Selection in the Epileptic Seizure Prediction Task
 
@@ -118,7 +118,7 @@ najwa.kouka@enis.usf.tn
 
 分析： 夸我的算法比当前已有的算法好高12%
 
-------------5---------
+------------7---------
 文章名
 Geometric Deep Learning for Subject Independent Epileptic Seizure Prediction Using Scalp EEG Signals
 
@@ -134,7 +134,7 @@ s.sridharan@qut.edu.au; c.fookes@qut.edu.au)'
 
 分析：  夸我的算法比当前已有的算法好高12%
 
--------------2-----------------------------------------------------------------------------------------
+-------------8----------------------------------------------------------------------------------------
 文章名
 An efficient epileptic seizure classification system using empirical wavelet transform and multi-fuse reduced deep convolutional neural network with digital implementation
 
@@ -147,7 +147,7 @@ effcaciously by adopting CNN having sensitivity of 83.33% [48], prediction accur
 
 分析： 用数据做对比，比其他相同背景的算法效果好
 
--------------3---------
+-------------9--------
 文章
 *--Patient-specific solution of the electrocorticography forward problem in deforming brain
 
@@ -157,7 +157,7 @@ effcaciously by adopting CNN having sensitivity of 83.33% [48], prediction accur
 分析：夸我的算法比传统的算法分类更精确
 
 
--------------8---------
+-------------10--------
 文章名
 A review of epilepsy detection and prediction methods based on EEG signal processing and deep learning
 
@@ -172,40 +172,7 @@ cfm5762@126.com
 
 分析：说我的算法克服了传统算法的瓶颈
 
--------------7---------
-文章名
-Predicting epileptic seizures based on EEG signals using spatial depth features of a 3D-2D hybrid CNN
-
-引用上下文
-Cao et al. proposed a method to predict seizures using a stacked CNN (SCNN) model composed of different CNN structures, characterized by the
-average amplitude spectrum map (MAS) of the α, β, θ, and γ rhythms of sEEG signals. They applied an adaptive feature weighting fusion algorithm to the classification process,
-which greatly enhanced the performance of the model [20]
-
-作者邮箱
-
-分析： 说我的特征权重算法提高了表现
-
-------------9---------
-文章名
-An Intelligent Epileptic Prediction System Based on Synchrosqueezed Wavelet Transform and Multi-Level Feature CNN for Smart Healthcare IoT
-
-引用上下文
-Other studies [23–27] used the raw EEG signals without any preprocessing and also
-achieved good results in predicting epileptic seizures. Besides, Cao and Hu et al. [28–31]
-achieved multi level prediction of epilepsy and obtained good results using the Mean
-Amplitude Spectrum (MAS).
-
-作者邮箱
-School of Information and Electronic Engineering, Zhejiang University of Science and Technology,
-Hangzhou 310023, China
-2 Department of Neurology, The Fourth Affiliated Hospital, Zhejiang University School of Medicine,
-Yiwu 322000, China
-3 Department of Computer Science and Mathematics, Sul Ross State University, Alpine, TX 79830, USA
-* Correspondence: chenfangni@zust.edu.cn
-
-分析：说我的算法得到的结果好
-
--------------10---------
+-------------11---------
 文章名
 --Analysis Between ELM and ANN in EMG Signals Obtained for the Control of a Robotic Hand Prosthesis
 
@@ -219,7 +186,38 @@ and demonstrate their ability to solve complex problems successfully [6]."
 
 分析：说我的文章用人工智能解决了一些传统算法无法解决的问题
 
--------------11---------
+------------12---------
+文章名
+An Intelligent Epileptic Prediction System Based on Synchrosqueezed Wavelet Transform and Multi-Level Feature CNN for Smart Healthcare IoT
+
+引用上下文
+Other studies [23–27] used the raw EEG signals without any preprocessing and also achieved good results in predicting epileptic seizures. Besides, Cao and Hu et al. [28–31]
+achieved multi level prediction of epilepsy and obtained good results using the Mean  Amplitude Spectrum (MAS).
+
+作者邮箱
+School of Information and Electronic Engineering, Zhejiang University of Science and Technology,
+Hangzhou 310023, China
+2 Department of Neurology, The Fourth Affiliated Hospital, Zhejiang University School of Medicine,
+Yiwu 322000, China
+3 Department of Computer Science and Mathematics, Sul Ross State University, Alpine, TX 79830, USA
+* Correspondence: chenfangni@zust.edu.cn
+
+分析：说我的算法得到的结果好
+
+-------------13---------
+文章名
+Predicting epileptic seizures based on EEG signals using spatial depth features of a 3D-2D hybrid CNN
+
+引用上下文
+Cao et al. proposed a method to predict seizures using a stacked CNN (SCNN) model composed of different CNN structures, characterized by the
+average amplitude spectrum map (MAS) of the α, β, θ, and γ rhythms of sEEG signals. They applied an adaptive feature weighting fusion algorithm to the classification process,
+which greatly enhanced the performance of the model [20]
+
+作者邮箱
+
+分析： 说我的特征权重算法提高了表现
+
+-------------14---------
 文章名
 --Applications of Artificial Intelligence in Automatic Detection of Epileptic Seizures Using EEG Signals: A Review
 
@@ -236,7 +234,7 @@ Email: sansam4k@gmail.com"
 
 分析：说我的算法在大数据的加持下获得了成功，数据分类以及特征提取
 
--------------12---------
+-------------15---------
 文章名
 --Automatic epileptic seizure detection based on persistent homology
 
