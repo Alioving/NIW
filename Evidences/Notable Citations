@@ -74,6 +74,10 @@ shen_hb@zju.edu.cn)
 --Epileptic Seizure Detection and Anticipation using Deep Learning with Ordered Encoding of Spectrogram Features
 
 引用上下文
+Furthermore, similar to [2], each of δ, θ, and α
+bands are subdivided into 3 sub-bands of equal size, and each
+of the last two bands are subdivided into 5 sub-bands of equal
+size.
 
 作者邮箱
 "Sameer Ranjan Sahu, Rama Krishna Sai Subrahmanyam Gorthi, Subrahmanyam Gorthi
@@ -85,7 +89,7 @@ email: sahusr12@gmail.com, rkg@iittp.ac.in, s.gorthi@iittp.ac.in"
 
 -------------5---------
 文章名
---EpilepsyNet: Novel automated detection of epilepsy using transformer model with EEG signals from 121 patient population
+--EpilepsyNet-Novel automated detection of epilepsy using transformer model with EEG signals from 121 patient population
 
 引用上下文
 "Proposed algorithm yields superior results than other existing algorithms."
