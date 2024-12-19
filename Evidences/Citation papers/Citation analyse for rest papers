@@ -35,8 +35,17 @@ NA
 *******    A Survey on Healthcare EEG Classification-Based ML Methods
 *******    ALO: AI for Least Observed People
 *******    An EEG based real-time epilepsy seizure detection approach using discrete wavelet transform and machine learning methods
+NA
+
 *******    An efficient channel recurrent Criss-cross attention network for epileptic seizure prediction
+NA
 *******    An efficient epileptic seizure classification system using empirical wavelet transform and multi-fuse reduced deep convolutional neural network with digital implementation
+Y
+The discriminative features are
+extracted from the raw scalp EEG (sEEG) to predict the seizure epochs
+effcaciously by adopting CNN having sensitivity of 83.33% [48], prediction accuracy of 90.0% [49], and 99.33% using stacked CNN [50]
+
+
 *******    An Epileptic Seizure Prediction Model based on a Time-wise Attention Simulation Module and a Pretrained ResNet
 *******    An Extensive Review of Machine Learning Techniques for EEG Signal Processing
 *******    An optimized deep learning network model for EEG based seizure classification using synchronization and functional connectivity measures
