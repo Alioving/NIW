@@ -9,41 +9,9 @@ https://www.researchgate.net/publication/330832390_Mean_amplitude_spectrum_based
 1,2,3
 (2) 单纯夸我的算法效果更好的或者想法新颖的
 
-（3）基于我的实验结果做对比的论文
+（3）基于我的实验结果做对比的论文 
 
 -------------1---------
-文章名
---Epileptic Seizure Detection and Anticipation using Deep Learning with Ordered Encoding of Spectrogram Features
-
-引用上下文
-
-作者邮箱
-"Sameer Ranjan Sahu, Rama Krishna Sai Subrahmanyam Gorthi, Subrahmanyam Gorthi
-Department of Electrical Engineering, Indian Institute of Technology, Tirupati, India
-email: sahusr12@gmail.com, rkg@iittp.ac.in, s.gorthi@iittp.ac.in"
-
-分析： 基本是基于我的论文写的，结果也是基于我的论文结果做对比，找他要个推荐信
-
--------------2---------
-文章名
-Automatic epileptic seizure recognition using reliefF feature selection and long short term memory classifier
-
-引用上下文
-In previous research works, researchers
-used dissimilar classifcation methodologies and features
-to classify the epileptic seizure classes. Two major diffculties faced by the researchers in the existing studies
-are; need more manual analysis and attain only reasonable
-performance in epileptic seizure detection (Hu et al. 2019;
-Anupallavi and MohanBabu 2020). In order to reduce
-more manual intervention and to improve the performance
-of epileptic seizure recognition, a new automated system
-is proposed in this study
-
-作者邮箱
-
-分析：--基于我的背景提出的新的方法
-
--------------3---------
 文章名
 --Landscape Perception Identification and Classification Based on Electroencephalogram (EEG) Features
 
@@ -62,10 +30,19 @@ wyt2019@vip.henu.edu.cn (Y.W.); wangsj@henu.edu.cn (S.W.)
 Beijing Normal University at Zhuhai, Zhuhai 519087, China
 * Correspondence: mingxu@henu.edu.cn"
 
-分析：他的文章用到了我提出的MAS特征
+分析：他的文章用到了我提出的MAS特征 
+
+-----2-----
+
+文章：
+Epilepsy EEG Seizure Prediction Based on the Combination of Graph Convolutional Neural Network Combined with Long- and Short-Term Memory Cell Network
+
+引用上下文：  
+In our model, our fragment sampling adopts the method of [12,17], that is, 50% overlapping sampling of the data is performed to obtain the sampled data xZ ∈ R2 f , wheref is the sampling frequency, and then this fragment is used for feature extraction. -------------3---------
 
 
--------------4---------
+
+-------------3---------
 文章名
 Hierarchy Graph Convolution Network and Tree Classification for Epileptic Detection on Electroencephalography Signals
 
@@ -91,6 +68,20 @@ Information Science Electronic Engineering, Zhejiang University, Hangzhou
 shen_hb@zju.edu.cn)
 
 分析： --大篇幅跟我的两篇论文做对比，浙江大学的，可以要封推荐信
+
+------4---
+文章名
+--Epileptic Seizure Detection and Anticipation using Deep Learning with Ordered Encoding of Spectrogram Features
+
+引用上下文
+
+作者邮箱
+"Sameer Ranjan Sahu, Rama Krishna Sai Subrahmanyam Gorthi, Subrahmanyam Gorthi
+Department of Electrical Engineering, Indian Institute of Technology, Tirupati, India
+email: sahusr12@gmail.com, rkg@iittp.ac.in, s.gorthi@iittp.ac.in"
+
+分析： 基本是基于我的论文写的，结果也是基于我的论文结果做对比，找他要个推荐信
+
 
 -------------5---------
 文章名
@@ -250,8 +241,8 @@ Neural Network (CNN) (Hu et al., 2019)."
 
 分析：说深度学习在处理大数据以及复杂的问题里有效，比如癫痫检测
 
-
--------------16---------NO
+----------------------------------------一共15条游泳的引用到此为止-----------------
+-------------16---------NO------------
 文章名
 --Multimodal EEG-fNIRS Seizure Pattern Decoding Using Vision Transformer
 
