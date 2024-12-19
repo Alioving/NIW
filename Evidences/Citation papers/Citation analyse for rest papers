@@ -159,39 +159,108 @@ s.sridharan@qut.edu.au; c.fookes@qut.edu.au)'
 NA
 
 *******    Hierarchy Graph Convolution Network and Tree Classification for Epileptic Detection on Electroencephalography Signals
+Y
+Hu et al. [2] and Cao et al. [10] classified interictal,
+preictal-I, preictal-II, preictal-III, and ictal courses of 5-class
+by conducting cross-validation experiments. The comparison
+drawn between the proposed model and the above-mentioned
+works is presented in the 5-class cross-validation part of
+Table VI. The confusion matrices of the state-of-the-art model
+and the proposed model are illustrated in Fig. 6(a) and (b),
+respectively, which show that the accuracy of the preictal-I,
+preictal-II, and preictal-III category of the proposed model is
+significantly better than the state of the art with an improvement of 8.5%, 12.6%, and 9.3%, respectively. In summary, the
+proposed HGCN+TC+PF model shows a 5.77% improvement
+in accuracy compared with the state of the art.
+
+大篇幅跟我的两篇论文做对比，浙江大学的，可以要封推荐信
+Difei Zeng, Kejie Huang, and Haibin Shen are with the College of
+Information Science Electronic Engineering, Zhejiang University, Hangzhou
+310027, China (e-mail: zjuzdf95@gmail.com; huangkejie@zju.edu.cn;
+shen_hb@zju.edu.cn)
+
 *******    Horizontal progressive and longitudinal leapfrogging fuzzy classification with feature activity adjustment
+NA
+
 *******    Intelligent fault diagnosis using image representation of multi-domain features
 *******    IoT and cloud computing based automatic epileptic seizure detection using HOS features based random forest classification
+NA
 *******    LieNet: A Deep Convolution Neural Network Framework for Detecting Deception
+NA
 *******    Lightweight Interleaved Residual Dense Network for Gas Identification of Industrial Polypropylene Coupled With an Electronic Nose
+NA
 *******    Lightweight Seizure Detection Based on Multi-Scale Channel Attention
 *******    Linear and non-linear feature extraction from rat electrocorticograms for seizure detection by support vector machine
 *******    Mathematical Modeling and Diagnostics Using Neural Networks and a Genetic Algorithm for Epilepsy Patients
 *******    MD-DCNN: Multi-Scale Dilation-Based Deep Convolution Neural Network for epilepsy detection using electroencephalogram signals
+NA
 *******    Mixed Bangla-English Spoken Digit Classification Using Convolutional Neural Network
 *******    Multiband seizure type classification based on 3D convolution with attention mechanisms
+NA
 *******    Multifuse multilayer multikernel RVFLN+ of process modes decomposition and approximate entropy data from iEEG/sEEG signals for epileptic seizure recognition
+NA
 *******    Multilayer one-class extreme learning machine
+NA
+
 *******    Multi-modal Signal Based Childhood Rolandic Epilepsy Detection
 *******    Multi-model decision-making seizure types classification based on transfer learning
 *******    Patient-Specific Seizure Prediction from Electroencephalogram Signal via Multi-Channel Feedback Capsule Network
+NA
 *******    Pediatric Epilepsy Assessment Based on EEG Analysis
+NA
 *******    Predicting epileptic seizures based on EEG signals using spatial depth features of a 3D-2D hybrid CNN
+Y
+
+Cao et al. proposed a method
+to predict seizures using a stacked CNN (SCNN) model
+composed of different CNN structures, characterized by the
+average amplitude spectrum map (MAS) of the α, β, θ, and
+γ rhythms of sEEG signals. They applied an adaptive feature
+weighting fusion algorithm to the classification process,
+which greatly enhanced the performance of the model [20]
+
+
 *******    Predicting Epileptic Seizures from EEG Spectral Band Features Using Convolutional Neural Network
+NA
 *******    Real-time epilepsy seizure detection based on EEG using tunable-Q wavelet transform and convolutional neural network
+NA
 *******    Recent Advances on Convolutional Architectures in Medical Applications: Classical or Quantum?
+NA
 *******    Regional Scalp EEGs Analysis and Classification on Typical Childhood Epilepsy Syndromes
+NA
+
 *******    Regularized correntropy criterion based semi-supervised ELM
+NA
 *******    Residual GCB-Net: Residual Graph Convolutional Broad Network on Emotion Recognition
+NA
+
 *******    Review on Epilepsy Detection with Explainable Artificial Intelligence
+NA
+
 *******    Scalp EEG functional connection and brain network in infants with West syndrome
+NA
 *******    Seizure detection algorithm based on fusion of spatio-temporal network constructed with dispersion index
+NA
+
 *******    Seizure detection algorithm based on improved functional brain network structure feature extraction
+NA
 *******    Seizure Detection of West Syndrome Based on Hybrid Optimization of Entropies With Multisensor EEG Data
+NA
+
 *******    Seizure prediction in scalp EEG based channel attention dual-input convolutional neural network
+NA
 *******    Seizure Prediction Using EEG Channel Selection Method
+NA
+
 *******    Statistical analysis on multi-factors of dynamic plantar pressure to normal subjects
+NA
+
 *******    Transfer discriminative dictionary learning with label consistency for classification of EEG signals of epilepsy
+NA
+
 *******    Two-Stream Attention 3-D Deep Network-Based Childhood Epilepsy Syndrome Classification
+NA
 *******    Urban Acoustic Classification based on Deep Feature Transfer Learning
+NA
 *******    Variable Weight Algorithm for Convolutional Neural Networks and its Applications to Classification of Seizure Phases and Types
+NA
