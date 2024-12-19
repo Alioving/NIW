@@ -126,13 +126,38 @@ NA
 *******    Epileptic Signal Classification with Deep Transfer Learning Feature on Mean Amplitude Spectrum
 NA
 *******    Epileptic State Classification based on Intrinsic Mode Function and Wavelet Packet Decomposition
+NA
+
 *******    Evolving Approaches in Epilepsy Management: Harnessing Internet of Things and Deep Learning
 *******    Fortifying Brain Signals for Robust Interpretation
+NA
 *******    FPGA based real-time epileptic seiz(20)ure prediction system
+NA
 *******    FPGA implementation of epileptic seizure detection using semisupervised reduced deep convolutional neural network
+NA
 *******    GENet: A Generic Neural Network for Detecting Various Neurological Disorders from EEG
+NA
+
 *******    Geometric Deep Learning for Subject Independent Epileptic Seizure Prediction Using Scalp EEG Signals
+Y
+
+Considering related studies, the Convolutional
+Neural Network (CNN) model of Hu et al. [22] achieved 86.25%
+accuracy on the CHB-MIT-EEG dataset. Their approach demonstrated an almost 12% accuracy improvement when identifying
+pre-ictal samples closer to a seizure compared to those more
+distant in time.
+
+Manuscript received March 6, 2021; revised June 4, 2021; accepted
+July 16, 2021. Date of publication July 27, 2021; date of current version
+February 4, 2022. (Corresponding author: Theekshana Dissanayake.)
+The authors are with the Signal Processing, Artificial Intelligence, and
+Vision Technologies (SAIVT) Group, Queensland University of Technology, Q3 Brisbane, QLD 4000, Australia (e-mail: theekshanadis@
+eng.pdn.ac.lk; t.warnakulasuriya@qut.edu.au; s.denman@qut.edu.au;
+s.sridharan@qut.edu.au; c.fookes@qut.edu.au)'
+
 *******    Graph-Theory-Based Multilevel Cortical Functional Connectivity Developmental Analysis
+NA
+
 *******    Hierarchy Graph Convolution Network and Tree Classification for Epileptic Detection on Electroencephalography Signals
 *******    Horizontal progressive and longitudinal leapfrogging fuzzy classification with feature activity adjustment
 *******    Intelligent fault diagnosis using image representation of multi-domain features
