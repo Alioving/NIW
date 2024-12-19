@@ -10,58 +10,8 @@
 
 12.19:
      
-1.加一个IEEE member 会员 、ACM会员或者其他要求学历的协会    
-在计算机和人工智能领域，有几个著名的协会和组织要求至少具有本科学历或相关的学术背景才能加入。以下是一些主要的协会和组织，它们通常会要求会员具备本科学历或同等的工作经验：
-
-### 1. **IEEE（Institute of Electrical and Electronics Engineers）**
-   - **要求**：IEEE 是全球最大的技术专业组织之一，涉及计算机、电子、电气工程等多个领域。IEEE 提供多个会员等级，某些级别如学生会员（Student Membership）和一般会员（Member）没有明确的学历要求。但高级会员和技术领域的会员（如高级会员、Fellow等）通常要求至少具备本科学历，且可能需要相应的工作经验和技术成就。
-   - **官网**：[IEEE Membership](https://www.ieee.org/membership/index.html)
-
-### 2. **ACM（Association for Computing Machinery）**
-   - **要求**：ACM 是计算机科学领域的一个重要协会。它对一般会员没有严格的学历要求，但很多专业活动和高级会员（如 Senior Member）级别会要求具备一定的学术背景或工作经验。学生会员（Student Member）显然是为在校学生设计的，而标准会员通常要求至少有本科学历。
-   - **官网**：[ACM Membership](https://www.acm.org/membership)
-
-### 3. **AAAI（Association for the Advancement of Artificial Intelligence）**
-   - **要求**：AAAI 是专注于人工智能的学术和专业组织，会员一般要求具备至少本科学历，尤其是对于申请参与一些高级活动或研究项目时。AAAI 还提供专业会议和工作坊，会员通常需要具备相应的技术背景。
-   - **官网**：[AAAI Membership](https://aaai.org/Membership/)
-
-### 4. **ISCA（International Speech Communication Association）**
-   - **要求**：ISCA 专注于语音和语言处理领域，会员通常要求至少具备本科学历，尤其是在申请参与其会议和学术活动时。该协会致力于语音学、语音识别和自然语言处理等领域。
-   - **官网**：[ISCA Membership](https://www.isca-speech.org/iscaweb/)
-
-### 5. **ACM SIGAI (Special Interest Group on Artificial Intelligence)**
-   - **要求**：这是 ACM 下专门针对人工智能的分支，加入该小组的会员一般要求有一定的学术背景，通常本科学历或以上。在学术会议、期刊的参与和发表中，会员通常需要具备一定的研究背景。
-   - **官网**：[ACM SIGAI](https://sigai.acm.org/)
-
-### 6. **CIPS（Chinese Information Processing Society of China）**
-   - **要求**：CIPS 是中国信息处理学会，致力于计算机科学及技术的推广和研究。该学会的会员一般要求至少具备本科学历，尤其是在加入专业技术委员会或参与高级活动时。
-   - **官网**：[CIPS](http://www.cips.org.cn/)
-
-### 7. **Informs（Institute for Operations Research and the Management Sciences）**
-   - **要求**：INFORMS 是一个关注运筹学、数据科学、人工智能和优化领域的全球性组织，加入该协会的会员通常需要具备本科学历或者相关的工作背景。
-   - **官网**：[INFORMS Membership](https://www.informs.org/)
-
-### 8. **ACM SIGCOMM (Special Interest Group on Data Communication)**
-   - **要求**：ACM SIGCOMM 是计算机网络领域的一个重要分支，专注于数据通信、网络协议和分布式系统的研究。要加入该组织，通常要求具有计算机科学、电子工程等相关学科的本科学历。
-   - **官网**：[SIGCOMM](https://www.sigcomm.org/)
-
-### 9. **IEEE Computer Society**
-   - **要求**：IEEE Computer Society 是 IEEE 的一个分支，专注于计算机领域的技术研究、开发和应用。该协会有多种会员等级，普通会员通常需要至少具有本科学历，而学生会员和初级会员可以在没有完全学位的情况下加入。
-   - **官网**：[IEEE Computer Society Membership](https://www.computer.org/membership)
-
-### 10. **NIPS（Neural Information Processing Systems）**
-   - **要求**：虽然 NIPS（现已更名为 NeurIPS）是一个主要集中在机器学习和人工智能研究的会议，但参与者和作者通常需要具备本科学历以上，尤其是涉及到论文提交和学术活动时。NIPS本身并不严格要求学历，但学术研究和会议参与者通常有相应的学术背景。
-
-### 11. **Society for Industrial and Applied Mathematics (SIAM)**
-   - **要求**：SIAM 是一个关注数学在工业和应用中的应用的组织，尤其是计算数学、数据科学等领域。加入该协会的普通会员通常需要至少具有本科学历。
-   - **官网**：[SIAM Membership](https://www.siam.org/membership)
-
----
-
-### 总结
-许多计算机和人工智能领域的协会和组织并没有严格要求会员具备本科学历，但在某些情况下，如参与高级活动、技术委员会或会议时，具有本科学历或相关经验通常是必要的。大多数协会提供学生会员身份，这对于在校生来说更加容易加入。
 2.挖掘所有notable citations，发邮件找好推荐人
-3.学位证翻译，然后认证
+3.学位证翻译，然后认证--done 
 4.专利 翻译
 5.流水证明等材料
 6.拟好推荐信 4封
