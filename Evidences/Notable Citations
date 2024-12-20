@@ -40,7 +40,8 @@ Epilepsy EEG Seizure Prediction Based on the Combination of Graph Convolutional 
 引用上下文：  
 In our model, our fragment sampling adopts the method of [12,17], that is, 50% overlapping sampling of the data is performed to obtain the sampled data xZ ∈ R2 f , wheref is the sampling frequency, and then this fragment is used for feature extraction. -------------3---------
 
-
+--长春大学的副教授，2024年11月发布的，
+-- Prof. Dr. Jian Zhao 长春大学的教授
 
 -------------3---------
 文章名
@@ -97,6 +98,7 @@ email: sahusr12@gmail.com, rkg@iittp.ac.in, s.gorthi@iittp.ac.in"
 作者邮箱
 
 分析：说我这篇文章提出的算法比当前已存在的算法效果都好
+澳洲，新加坡
 
 -------------6---------------------------------------------------------------------------------------
 文章名
@@ -112,6 +114,7 @@ Najwa Kouka
 najwa.kouka@enis.usf.tn
 
 分析： 夸我的算法比当前已有的算法好高12%
+Tunisia
 
 ------------7---------
 文章名
@@ -128,6 +131,7 @@ eng.pdn.ac.lk; t.warnakulasuriya@qut.edu.au; s.denman@qut.edu.au;
 s.sridharan@qut.edu.au; c.fookes@qut.edu.au)'
 
 分析：  夸我的算法比当前已有的算法好高12%
+昆士兰科技大学
 
 -------------8----------------------------------------------------------------------------------------
 文章名
@@ -141,6 +145,9 @@ effcaciously by adopting CNN having sensitivity of 83.33% [48], prediction accur
 作者邮箱
 
 分析： 用数据做对比，比其他相同背景的算法效果好
+* Corresponding author.
+E-mail address: pradyut@iiit-bh.ac.in (P.K. Biswal).
+印度
 
 -------------9--------
 文章
@@ -150,6 +157,22 @@ effcaciously by adopting CNN having sensitivity of 83.33% [48], prediction accur
 "With a large amount of data, it outperforms traditional feature extraction in terms of classification accuracy (Hu et al., 2019)."
 
 分析：夸我的算法比传统的算法分类更精确
+Corresponding author
+Email address: benjamin.zwick@uwa.edu.au (B.F. Zwick)
+
+B.F. Zwicka: a,*    
+G.C. Bourantasa: a  
+S. Safdara: a  
+G.R. Joldes:a      
+D.E. Hyde:b,c
+S.K. Warfield:b,c  
+A. Wittek:a  
+K. Miller:a,c  
+
+a Intelligent Systems for Medicine Laboratory, The University of Western Australia, 35 Stirling Highway, Perth, WA, Australia
+b Computational Radiology Laboratory, Boston Children’s Hospital, Boston, MA, USA
+c Harvard Medical School, Boston, MA, USA
+
 
 
 -------------10--------
