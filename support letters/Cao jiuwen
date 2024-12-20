@@ -1,22 +1,39 @@
-推荐人：
-1.cao
-2.liu
-3.sheng
-4-6: independents
+---------------------------------------------------------中文-------------------------------------------------------------------------------
+尊敬的相关负责人：
 
-independents: 
-1. maryam.panahiazar@ucsf.edu
-Epileptic Seizures Detection Using Deep Learning Techniques: A Review
+我谨在此全力推荐胡文斌先生，支持他申请国家利益豁免（NIW）。作为他在杭州电子科技大学的学术导师，我有幸见证了他在科研方面的卓越表现和非凡能力。基于他在癫痫发作预测领域的突出贡献以及他未来在医学和医疗健康领域的巨大潜力，我坚信他的研究与美国国家利益高度契合，完全符合NIW的要求。
 
+研究贡献与成就
+胡文斌的研究主要集中在通过创新方法提高癫痫发作预测的准确性，尤其是在分析脑电图（EEG）信号方面。他的工作显著提升了目前癫痫发作预测方法的有效性，解决了实时准确预测癫痫发作的难题，这对改善患者预后和降低医疗成本具有重要意义。
 
+他的一个突出贡献是提出了对癫痫间歇期（即发作之间的时期）的精细化分类。传统的癫痫预测模型通常忽视这一阶段，而胡文斌的研究将间歇期划分为多个阶段，从而通过捕捉大脑活动中微小的变化，提高发作预测的准确性。这些微小变化通常是即将发作的早期指示信号。通过对这些阶段的区分，他的方法增强了预测的精确性，能够实现更早的干预，从而提高患者安全性、改善生活质量，并降低医疗费用。
 
+此外，胡文斌的研究结合了深度学习中的卷积神经网络（CNNs），通过自动从原始EEG信号中提取特征，消除了手动特征提取的需求。这大大提高了癫痫发作预测模型的效率和准确性。胡文斌的工作证明了这些方法能够比传统方法更高效地预测癫痫发作，减少假阳性结果，并提供更可靠的实时预测。
 
-Below are revised and expanded versions of the six recommendation letters. They have been made more formal, more detailed, and use more professional language. Each letter now thoroughly emphasizes the petitioner’s unique contributions, the national importance of their work in EEG-based epileptic seizure prediction, the alignment with U.S. priorities, and how the National Interest Waiver (NIW) would enable their contributions to benefit the United States more rapidly and effectively. Where appropriate, the letters reference the broader U.S. healthcare context, technological leadership, and potential policy frameworks (e.g., NIH initiatives).
+对美国国家利益的影响
+提高癫痫发作预测的准确性和提前预警时间，对于美国公共健康和医疗创新具有重要意义。癫痫在美国影响着超过300万人，许多癫痫患者面临因发作不可预测而带来的严重风险。目前的预测方法仍然不够准确，急需改进以更好地管理这一疾病。胡文斌的研究填补了这一空白，提供了一种精确且可扩展的癫痫发作预测解决方案，具有潜力改善数百万美国患者的生活。
 
-In a real application, each letter should be printed on official letterhead, signed by the recommender, and include their full title, institutional affiliation, and contact information. The factual details, such as publication names, specific dates, and institutional credentials, should be adjusted to match the petitioner’s real record.
+除此之外，胡文斌的研究还可能对预测性医疗技术的发展产生深远影响。他所开发的方法可以应用于其他神经系统疾病，推动早期诊断和实时预测系统的发展，如中风、心脏病和房颤等疾病。这些研究直接支持了美国在提升生物医学技术、改善医疗成果以及减轻神经疾病经济负担方面的目标。
 
---------------------------------------
-**1. Graduate Advisor (Master’s Research Supervisor)**
+未来潜力与领导力
+胡文斌具备继续在神经工程和生物医学信号处理领域做出重大贡献的潜力。他能够将机器学习与神经技术结合，这使他处于下一代医疗创新者的前沿。他的研究已经在高影响力期刊上发表，获得了学术界的认可，因其创新性和广泛的应用价值而受到关注。
+
+胡文斌未来的研究有望推动预测性诊断工具的开发，这些工具不仅能够在癫痫领域带来革命性的变化，还能在更广泛的神经疾病领域产生深远的影响。随着神经技术和个性化医学的快速发展，我坚信胡文斌将在改善医疗成果方面继续做出重大贡献。
+
+结论
+综上所述，我强烈推荐胡文斌申请国家利益豁免。他在癫痫发作预测方面的研究，特别是他通过创新性的方法分类间歇期以提高预测准确性，具有极大的潜力，能够极大改善美国公共健康。他的贡献与美国在医疗技术和改善患者预后方面的国家优先目标高度契合，我坚信他的持续研究将进一步巩固美国在该领域的领导地位。
+
+如您需要更多信息，欢迎随时与我联系。
+
+此致
+敬礼！
+
+[推荐人姓名]
+[职位]
+杭州电子科技大学
+[联系方式]
+
+----------------------------------------pdf版本--------------------------------------------------------------
 
 [推荐人姓名]
 [推荐人职位]
@@ -56,3 +73,52 @@ Sincerely,
 [推荐人单位名称]
 [推荐人联系方式]
 
+----------------------------------------------------------------latex 版本----------------------------------------------------------------------
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{geometry}
+\geometry{left=1in,right=1in,top=1in,bottom=1in}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\title{Recommendation Letter for Wenbin Hu}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+To Whom It May Concern,\\[1em]
+
+I am writing to provide my highest recommendation for {\bf Wenbin Hu} in support of his application for the {\bf National Interest Waiver (NIW)}. As his academic advisor at Hangzhou Dianzi University for [时间长度], I have had the opportunity to closely follow his research and observe his remarkable abilities as a scholar. Based on his exceptional contributions to the field of {\bf epileptic seizure prediction} and his potential to further impact the medical and healthcare sectors, I am confident that his work aligns with the United States' national interests and is deserving of the NIW.\\[1em]
+
+{\bf Research Contributions and Achievements}\\[1em]
+Hu Wenbin's research focuses on improving the prediction of {\bf epileptic seizures}, particularly through novel approaches to analyzing {\bf electroencephalogram (EEG) signals}. His work has significantly advanced the current methods of seizure prediction by addressing the challenge of accurately predicting seizures in real-time, which is critical for improving patient outcomes and reducing healthcare costs.\\[1em]
+
+One of his most notable contributions is the introduction of a {\bf fine-grained classification of the interictal period} (the period between seizures), which is often overlooked in traditional seizure prediction models. While most existing systems focus primarily on the {\bf ictal phase} (the period during a seizure), Hu Wenbin’s research classifies the {\bf interictal period} into multiple stages. This provides a more precise method of predicting seizures by capturing subtle changes in brain activity during the interictal phase, which are often early indicators of impending seizures. By distinguishing these phases, his approach enhances the accuracy of predictions and allows for earlier intervention, improving patient safety and quality of life.\\[1em]
+
+His research combines advanced techniques in {\bf deep learning}, specifically {\bf Convolutional Neural Networks (CNNs)}, to automatically extract features from raw EEG signals, which eliminates the need for manual feature extraction. This significantly improves the efficiency and accuracy of seizure prediction models. Hu Wenbin’s work has shown that these methods can predict seizures with much higher accuracy compared to traditional methods, reducing false positives and providing more reliable real-time predictions.\\[1em]
+
+{\bf Impact on U.S. National Interest}\\[1em]
+The ability to predict seizures with greater accuracy and lead time is of immense importance for both public health and healthcare innovation in the United States. {\bf Epilepsy affects over 3 million people in the U.S.}, and many individuals living with epilepsy face significant risks due to unpredictable seizures. Current methods are insufficient, and there is a critical need for improvements in prediction accuracy to better manage the condition. Hu Wenbin’s work addresses this gap by providing a more precise and scalable solution for seizure prediction, which has the potential to improve the lives of millions of Americans.\\[1em]
+
+Beyond its impact on epilepsy, his research could have far-reaching implications for the development of predictive healthcare technologies. The methods he has developed could be applied to other neurological disorders, leading to innovations in early diagnosis and real-time prediction systems. His work directly supports U.S. goals of advancing {\bf biomedical technologies}, improving {\bf healthcare outcomes}, and reducing the {\bf economic burden} of neurological disorders.\\[1em]
+
+{\bf Future Potential and Leadership}\\[1em]
+Hu Wenbin is poised to continue making significant contributions to the field of {\bf neuroengineering} and {\bf biomedical signal processing}. His ability to integrate {\bf machine learning} with {\bf neurotechnology} positions him as a leader in the next generation of healthcare innovators. His research has already been presented at high-impact journals, earning recognition for its novelty and applicability.\\[1em]
+
+His future research promises to drive forward the development of {\bf predictive diagnostic tools} that could have transformative effects not only in epilepsy but also in a wide range of neurological conditions. I am confident that Hu Wenbin will continue to make significant contributions to healthcare innovation, particularly in the areas of {\bf neurotechnology} and {\bf personalized medicine.}\\[1em]
+
+{\bf Conclusion}\\[1em]
+In conclusion, I strongly recommend Hu Wenbin for the {\bf National Interest Waiver}. His work on {\bf epileptic seizure prediction}, especially his innovative approach to classifying the interictal period for more accurate predictions, has the potential to greatly benefit {\bf public health} in the United States. His contributions align perfectly with the country’s priorities in advancing {\bf healthcare technologies} and improving patient outcomes, and I have no doubt that his continued research will further strengthen the U.S.’s leadership in the field.\\[1em]
+
+Should you require any further information, please do not hesitate to contact me.\\[1em]
+
+Sincerely,\\[1em]
+\noindent {\bf [Your Name]}\\
+[Your Title] \\
+[Your Institution] \\
+[Your Contact Information]
+
+\end{document}
