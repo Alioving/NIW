@@ -53,18 +53,10 @@ In our model, our fragment sampling adopts the method of [12,17], that is, 50% o
 Hierarchy Graph Convolution Network and Tree Classification for Epileptic Detection on Electroencephalography Signals
 
 引用上下文
-Hu et al. [2] and Cao et al. [10] classified interictal,
-preictal-I, preictal-II, preictal-III, and ictal courses of 5-class
-by conducting cross-validation experiments. The comparison
-drawn between the proposed model and the above-mentioned
-works is presented in the 5-class cross-validation part of
-Table VI. The confusion matrices of the state-of-the-art model
-and the proposed model are illustrated in Fig. 6(a) and (b),
-respectively, which show that the accuracy of the preictal-I,
-preictal-II, and preictal-III category of the proposed model is
-significantly better than the state of the art with an improvement of 8.5%, 12.6%, and 9.3%, respectively. In summary, the
-proposed HGCN+TC+PF model shows a 5.77% improvement
-in accuracy compared with the state of the art.
+Hu et al. [2] and Cao et al. [10] classified interictal, preictal-I, preictal-II, preictal-III, and ictal courses of 5-class by conducting cross-validation experiments. The comparison
+drawn between the proposed model and the above-mentioned works is presented in the 5-class cross-validation part of Table VI. The confusion matrices of the state-of-the-art model
+and the proposed model are illustrated in Fig. 6(a) and (b), respectively, which show that the accuracy of the preictal-I, preictal-II, and preictal-III category of the proposed model is
+significantly better than the state of the art with an improvement of 8.5%, 12.6%, and 9.3%, respectively. In summary, the proposed HGCN+TC+PF model shows a 5.77% improvement in accuracy compared with the state of the art.
 
 作者邮箱
 
